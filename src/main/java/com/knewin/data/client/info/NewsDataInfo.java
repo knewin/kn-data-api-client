@@ -5,6 +5,12 @@ import java.util.Collection;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Class that stores news data.
+ * 
+ * @since 1.0.0
+ * 
+ */
 public class NewsDataInfo extends DataInfo {
 
 	private String domain;
@@ -32,61 +38,21 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * Default constructor.
+	 * Adds a similar doc to the list of similar docs.
+	 * 
+	 * @param newDoc the similar doc.
 	 */
-	public NewsDataInfo() {
+	public void addSimilar(final NewsDataInfo newDoc) {
+		if (this.similar == null) {
+			this.similar = new ArrayList<>();
+		}
+		this.similar.add(newDoc);
 	}
 
 
 	/**
-	 * @return the domain
-	 */
-	public String getDomain() {
-		return domain;
-	}
-
-
-	/**
-	 * @param domain the domain to set
-	 */
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
-
-
-	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
-
-
-	/**
-	 * @param title the title to set
-	 */
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-
-	/**
-	 * @return the subtitle
-	 */
-	public String getSubtitle() {
-		return subtitle;
-	}
-
-
-	/**
-	 * @param subtitle the subtitle to set
-	 */
-	public void setSubtitle(String subtitle) {
-		this.subtitle = subtitle;
-	}
-
-
-	/**
+	 * Get the author.
+	 * 
 	 * @return the author
 	 */
 	public String getAuthor() {
@@ -95,62 +61,8 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * @param author the author to set
-	 */
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
-
-	/**
-	 * @return the content
-	 */
-	public String getContent() {
-		return content;
-	}
-
-
-	/**
-	 * @param content the content to set
-	 */
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-
-	/**
-	 * @return the similar
-	 */
-	public Collection<NewsDataInfo> getSimilar() {
-		return similar;
-	}
-
-
-	/**
-	 * @param similar the similar to set
-	 */
-	public void setSimilar(Collection<NewsDataInfo> similar) {
-		this.similar = similar;
-	}
-
-
-	/**
-	 * @return the imageHits
-	 */
-	public Collection<ImageNewsDataInfo> getImageHits() {
-		return imageHits;
-	}
-
-
-	/**
-	 * @param imageHits the imageHits to set
-	 */
-	public void setImageHits(Collection<ImageNewsDataInfo> imageHits) {
-		this.imageHits = imageHits;
-	}
-
-
-	/**
+	 * Get the category.
+	 * 
 	 * @return the category
 	 */
 	public String getCategory() {
@@ -159,14 +71,28 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * @param category the category to set
+	 * Get the content.
+	 * 
+	 * @return the content
 	 */
-	public void setCategory(String category) {
-		this.category = category;
+	public String getContent() {
+		return content;
 	}
 
 
 	/**
+	 * Get the domain.
+	 * 
+	 * @return the domain
+	 */
+	public String getDomain() {
+		return domain;
+	}
+
+
+	/**
+	 * Get the hat.
+	 * 
 	 * @return the hat
 	 */
 	public String getHat() {
@@ -175,14 +101,18 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * @param hat the hat to set
+	 * Get a list of {@link ImageNewsDataInfo} instances.
+	 * 
+	 * @return a list of images
 	 */
-	public void setHat(String hat) {
-		this.hat = hat;
+	public Collection<ImageNewsDataInfo> getImageHits() {
+		return imageHits;
 	}
 
 
 	/**
+	 * Get the locality.
+	 * 
 	 * @return the locality
 	 */
 	public String getLocality() {
@@ -191,14 +121,8 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * @param locality the locality to set
-	 */
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
-
-
-	/**
+	 * Get the page.
+	 * 
 	 * @return the page
 	 */
 	public String getPage() {
@@ -207,22 +131,150 @@ public class NewsDataInfo extends DataInfo {
 
 
 	/**
-	 * @param page the page to set
+	 * Get a list of similar news.
+	 * 
+	 * @return a list of similar news
 	 */
-	public void setPage(String page) {
+	public Collection<NewsDataInfo> getSimilar() {
+		return similar;
+	}
+
+
+	/**
+	 * Get the subtitle.
+	 * 
+	 * @return the subtitle
+	 */
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+
+	/**
+	 * The the title.
+	 * 
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+
+	/**
+	 * Set the author.
+	 * 
+	 * @param author the author
+	 */
+	public void setAuthor(final String author) {
+		this.author = author;
+	}
+
+
+	/**
+	 * Set the category.
+	 * 
+	 * @param category the category
+	 */
+	public void setCategory(final String category) {
+		this.category = category;
+	}
+
+
+	/**
+	 * Set the content.
+	 * 
+	 * @param content the content
+	 */
+	public void setContent(final String content) {
+		this.content = content;
+	}
+
+
+	/**
+	 * Set the domain.
+	 * 
+	 * @param domain the domain
+	 */
+	public void setDomain(final String domain) {
+		this.domain = domain;
+	}
+
+
+	/**
+	 * Set the hat.
+	 * 
+	 * @param hat the hat
+	 */
+	public void setHat(final String hat) {
+		this.hat = hat;
+	}
+
+
+	/**
+	 * Set a list of {@link ImageNewsDataInfo} instances.
+	 * 
+	 * @param imageHits a list of images
+	 */
+	public void setImageHits(Collection<ImageNewsDataInfo> imageHits) {
+		this.imageHits = imageHits;
+	}
+
+
+	/**
+	 * Set the locality.
+	 * 
+	 * @param locality the locality
+	 */
+	public void setLocality(String locality) {
+		this.locality = locality;
+	}
+
+
+	/**
+	 * Set the page.
+	 * 
+	 * @param page the page
+	 */
+	public void setPage(final String page) {
 		this.page = page;
 	}
 
 
 	/**
-	 * Adds a similar doc to the list of similar docs.
+	 * Set a list of similar news.
 	 * 
-	 * @param newDoc the similar doc.
+	 * @param similar a list of similar news
 	 */
-	public void addSimilar(NewsDataInfo newDoc) {
-		if (similar == null) {
-			similar = new ArrayList<>();
-		}
-		similar.add(newDoc);
+	public void setSimilar(final Collection<NewsDataInfo> similar) {
+		this.similar = similar;
 	}
+
+
+	/**
+	 * Set the subtitle.
+	 * 
+	 * @param subtitle the subtitle
+	 */
+	public void setSubtitle(final String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+
+	/**
+	 * Set the title.
+	 * 
+	 * @param title the title
+	 */
+	public void setTitle(final String title) {
+		this.title = title;
+	}
+
+
+	@Override
+	public String toString() {
+		return "NewsDataInfo [domain=" + domain + ", title=" + title + ", subtitle=" + subtitle + ", author=" + author
+			+ ", content=" + content + ", similar=" + similar + ", imageHits=" + imageHits + ", category=" + category
+			+ ", hat=" + hat + ", locality=" + locality + ", page=" + page + "]";
+	}
+
 }

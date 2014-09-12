@@ -1,5 +1,11 @@
 package com.knewin.data.client.info;
 
+/**
+ * Class that stores news image data.
+ * 
+ * @since 1.0.0
+ * 
+ */
 public class ImageNewsDataInfo {
 
 	private String url;
@@ -10,23 +16,9 @@ public class ImageNewsDataInfo {
 
 
 	/**
-	 * @return the url
-	 */
-	public String getUrl() {
-		return url;
-	}
-
-
-	/**
-	 * @param url the url to set
-	 */
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-
-	/**
-	 * @return the caption
+	 * Get the image caption.
+	 * 
+	 * @return the image caption
 	 */
 	public String getCaption() {
 		return caption;
@@ -34,15 +26,9 @@ public class ImageNewsDataInfo {
 
 
 	/**
-	 * @param caption the caption to set
-	 */
-	public void setCaption(String caption) {
-		this.caption = caption;
-	}
-
-
-	/**
-	 * @return the credit
+	 * Get the image credit.
+	 * 
+	 * @return the image credit
 	 */
 	public String getCredit() {
 		return credit;
@@ -50,9 +36,48 @@ public class ImageNewsDataInfo {
 
 
 	/**
-	 * @param credit the credit to set
+	 * Get the image URL.
+	 * 
+	 * @return the image URL
 	 */
-	public void setCredit(String credit) {
+	public String getUrl() {
+		return url;
+	}
+
+
+	/**
+	 * Set the image caption.
+	 * 
+	 * @param caption the image caption
+	 */
+	public void setCaption(final String caption) {
+		this.caption = caption;
+	}
+
+
+	/**
+	 * Set the image credit.
+	 * 
+	 * @param credit the image credit
+	 */
+	public void setCredit(final String credit) {
 		this.credit = credit;
 	}
+
+
+	/**
+	 * Set the image URL.
+	 * 
+	 * @param url the image URL
+	 */
+	public void setUrl(final String url) {
+		this.url = url;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ImageNewsDataInfo [url=" + url + ", caption=" + caption + ", credit=" + credit + "]";
+	}
+
 }

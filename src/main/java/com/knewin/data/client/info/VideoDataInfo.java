@@ -2,6 +2,12 @@ package com.knewin.data.client.info;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Class that stores data about video.
+ * 
+ * @since 1.0.0
+ * 
+ */
 public class VideoDataInfo extends DataInfo {
 
 	@SerializedName("video_url")
@@ -30,118 +36,8 @@ public class VideoDataInfo extends DataInfo {
 
 
 	/**
-	 * @return the videoUrl
-	 */
-	public String getVideoUrl() {
-		return videoUrl;
-	}
-
-
-	/**
-	 * @param videoUrl the videoUrl to set
-	 */
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-	}
-
-
-	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
-
-
-	/**
-	 * @param title the title to set
-	 */
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-
-	/**
-	 * @return the subtitle
-	 */
-	public String getSubtitle() {
-		return subtitle;
-	}
-
-
-	/**
-	 * @param subtitle the subtitle to set
-	 */
-	public void setSubtitle(String subtitle) {
-		this.subtitle = subtitle;
-	}
-
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-
-	/**
-	 * @return the category
-	 */
-	public String getCategory() {
-		return category;
-	}
-
-
-	/**
-	 * @param category the category to set
-	 */
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-
-	/**
-	 * @return the keywords
-	 */
-	public String getKeywords() {
-		return keywords;
-	}
-
-
-	/**
-	 * @param keywords the keywords to set
-	 */
-	public void setKeywords(String keywords) {
-		this.keywords = keywords;
-	}
-
-
-	/**
-	 * @return the locality
-	 */
-	public String getLocality() {
-		return locality;
-	}
-
-
-	/**
-	 * @param locality the locality to set
-	 */
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
-
-
-	/**
+	 * Get the author.
+	 * 
 	 * @return the author
 	 */
 	public String getAuthor() {
@@ -150,46 +46,28 @@ public class VideoDataInfo extends DataInfo {
 
 
 	/**
-	 * @param author the author to set
+	 * Get the category.
+	 * 
+	 * @return the category
 	 */
-	public void setAuthor(String author) {
-		this.author = author;
+	public String getCategory() {
+		return category;
 	}
 
 
 	/**
-	 * @return the hat
+	 * Get the description.
+	 * 
+	 * @return the description
 	 */
-	public String getHat() {
-		return hat;
+	public String getDescription() {
+		return description;
 	}
 
 
 	/**
-	 * @param hat the hat to set
-	 */
-	public void setHat(String hat) {
-		this.hat = hat;
-	}
-
-
-	/**
-	 * @return the startImage
-	 */
-	public String getStartImage() {
-		return startImage;
-	}
-
-
-	/**
-	 * @param startImage the startImage to set
-	 */
-	public void setStartImage(String startImage) {
-		this.startImage = startImage;
-	}
-
-
-	/**
+	 * Get the duration.
+	 * 
 	 * @return the duration
 	 */
 	public Integer getDuration() {
@@ -198,9 +76,190 @@ public class VideoDataInfo extends DataInfo {
 
 
 	/**
-	 * @param duration the duration to set
+	 * Get the hat.
+	 * 
+	 * @return the hat
 	 */
-	public void setDuration(Integer duration) {
+	public String getHat() {
+		return hat;
+	}
+
+
+	/**
+	 * Get the keywords.
+	 * 
+	 * @return the keywords
+	 */
+	public String getKeywords() {
+		return keywords;
+	}
+
+
+	/**
+	 * Get the locality.
+	 * 
+	 * @return the locality
+	 */
+	public String getLocality() {
+		return locality;
+	}
+
+
+	/**
+	 * Get the start image URL
+	 * 
+	 * @return the start image URL
+	 */
+	public String getStartImage() {
+		return startImage;
+	}
+
+
+	/**
+	 * Get the subtitle.
+	 * 
+	 * @return the subtitle
+	 */
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+
+	/**
+	 * Get the title.
+	 * 
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+
+	/**
+	 * Get the video URL.
+	 * 
+	 * @return the video URL
+	 */
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+
+
+	/**
+	 * Set the author.
+	 * 
+	 * @param author the author
+	 */
+	public void setAuthor(final String author) {
+		this.author = author;
+	}
+
+
+	/**
+	 * Set the category.
+	 * 
+	 * @param category the category
+	 */
+	public void setCategory(final String category) {
+		this.category = category;
+	}
+
+
+	/**
+	 * Set the description.
+	 * 
+	 * @param description the description
+	 */
+	public void setDescription(final String description) {
+		this.description = description;
+	}
+
+
+	/**
+	 * Set the duration.
+	 * 
+	 * @param duration the duration
+	 */
+	public void setDuration(final Integer duration) {
 		this.duration = duration;
 	}
+
+
+	/**
+	 * Set the hat.
+	 * 
+	 * @param hat the hat
+	 */
+	public void setHat(final String hat) {
+		this.hat = hat;
+	}
+
+
+	/**
+	 * Set the keywords.
+	 * 
+	 * @param keywords the keywords
+	 */
+	public void setKeywords(final String keywords) {
+		this.keywords = keywords;
+	}
+
+
+	/**
+	 * Set the locality.
+	 * 
+	 * @param locality the locality
+	 */
+	public void setLocality(final String locality) {
+		this.locality = locality;
+	}
+
+
+	/**
+	 * Set the start image URL.
+	 * 
+	 * @param startImage the start image URL
+	 */
+	public void setStartImage(final String startImage) {
+		this.startImage = startImage;
+	}
+
+
+	/**
+	 * Set the subtitle.
+	 * 
+	 * @param subtitle the subtitle
+	 */
+	public void setSubtitle(final String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+
+	/**
+	 * Set the title.
+	 * 
+	 * @param title the title
+	 */
+	public void setTitle(final String title) {
+		this.title = title;
+	}
+
+
+	/**
+	 * Set the video URL.
+	 * 
+	 * @param videoUrl the video URL
+	 */
+	public void setVideoUrl(final String videoUrl) {
+		this.videoUrl = videoUrl;
+	}
+
+
+	@Override
+	public String toString() {
+		return "VideoDataInfo [videoUrl=" + videoUrl + ", title=" + title + ", subtitle=" + subtitle + ", description="
+			+ description + ", category=" + category + ", keywords=" + keywords + ", locality=" + locality + ", author="
+			+ author + ", hat=" + hat + ", startImage=" + startImage + ", duration=" + duration + "]";
+	}
+
 }

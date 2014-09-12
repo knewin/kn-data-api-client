@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Parent class that stores generic data.
  * 
+ * @since 1.0.0
+ * 
  */
 public abstract class DataInfo {
 
