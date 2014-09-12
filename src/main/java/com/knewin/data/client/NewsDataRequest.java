@@ -8,6 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import com.google.gson.reflect.TypeToken;
 import com.knewin.data.client.info.DataResponseInfo;
 import com.knewin.data.client.info.NewsDataInfo;
+import com.knewin.data.client.info.NewsDataRequestInfo;
 
 /**
  * Class responsible for requesting news from web service.
@@ -24,7 +25,7 @@ public class NewsDataRequest extends DataRequest {
 	/**
 	 * Request news from web service.
 	 * 
-	 * @param request a {@link NewsDataRequest} instance
+	 * @param requestInfo a {@link NewsDataRequest} instance
 	 * @param url the web service URL
 	 * @param httpClient a {@link CloseableHttpClient} instance
 	 * 
@@ -32,24 +33,24 @@ public class NewsDataRequest extends DataRequest {
 	 * 
 	 * @throws IOException error when requesting data from web service
 	 */
-	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequest request, final String url,
+	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url,
 		final CloseableHttpClient httpClient) throws IOException {
-		return this.buildResponse(super.request(super.jsonBuilder.toJson(request), url, httpClient));
+		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url, httpClient));
 	}
 
 
 	/**
 	 * Request news from web service.
 	 * 
-	 * @param request a {@link NewsDataRequest} instance
+	 * @param requestInfo a {@link NewsDataRequest} instance
 	 * @param url the web service URL
 	 * 
 	 * @return a {@link DataResponseInfo} instance
 	 * 
 	 * @throws IOException error when requesting data from web service
 	 */
-	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequest request, final String url) throws IOException {
-		return this.buildResponse(super.request(super.jsonBuilder.toJson(request), url));
+	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url) throws IOException {
+		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url));
 	}
 
 
