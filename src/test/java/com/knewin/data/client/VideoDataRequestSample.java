@@ -32,7 +32,8 @@ public class VideoDataRequestSample {
 		System.out.println("Número de vídeos encontrados: " + responseInfo.getNumDocs());
 
 		System.out.println("Títulos dos vídeos recuperados");
-		responseInfo.getHits().forEach(videoDataInfo -> System.out.println("   - " + videoDataInfo.getTitle()));
+		responseInfo.getHits().stream().map(VideoDataInfo::getTitle).filter(title -> title != null)
+			.forEach(title -> System.out.println("   - " + title));
 	}
 
 }
