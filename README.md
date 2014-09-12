@@ -15,7 +15,7 @@ Exemplo de como fazer consulta na API de notícias
 
 		final NewsDataRequest newsDataRequest = new NewsDataRequest();
 		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest
-			.getNews(requestInfo, "http://data.knewin.com/news");
+			.getNews(requestInfo, "URL-WEB-SERVICE");
 
 		System.out.println("Número de notícias encontradas: " + responseInfo.getNumDocs());
 
@@ -29,7 +29,7 @@ Exemplo de como fazer consulta na API de notícias
 Exemplo de como fazer consulta na API de vídeos
 -----------------------------------------------
 
-		final String url = "http://data.knewin.com/video?k=" + key + "&q=" + query;
+		final String url = "URL-WEB-SERVICE?k=" + key + "&q=" + query;
 
 		final VideoDataRequest videoDataRequest = new VideoDataRequest();
 		final DataResponseInfo<VideoDataInfo> responseInfo = videoDataRequest.getVideos(url);

@@ -15,18 +15,19 @@ public class VideoDataRequestSample {
 	/**
 	 * Show an example of how to call the web service to get videos.
 	 * 
-	 * @param args [0] the client's key; [1] the query
+	 * @param args [0] the web service URL; [1] the client's key; [2] the query
 	 * 
 	 * @throws IOException error in case of problems to request news
 	 */
 	public static void main(final String[] args) throws IOException {
-		final String key = args[0];
-		final String query = args[1];
+		final String url = args[0];
+		final String key = args[1];
+		final String query = args[2];
 
-		final String url = "http://data.knewin.com/video?k=" + key + "&q=" + query;
+		final String fullUrl = url + "?k=" + key + "&q=" + query;
 
 		final VideoDataRequest videoDataRequest = new VideoDataRequest();
-		final DataResponseInfo<VideoDataInfo> responseInfo = videoDataRequest.getVideos(url);
+		final DataResponseInfo<VideoDataInfo> responseInfo = videoDataRequest.getVideos(fullUrl);
 
 		System.out.println("Número de vídeos encontrados: " + responseInfo.getNumDocs());
 

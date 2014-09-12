@@ -16,13 +16,14 @@ public class NewsDataRequestSample {
 	/**
 	 * Show an example of how to call the web service to get news.
 	 * 
-	 * @param args [0] the client's key; [1] the query
+	 * @param args [0] the web service URL; [1] the client's key; [2] the query
 	 * 
 	 * @throws IOException error in case of problems to request news
 	 */
 	public static void main(final String[] args) throws IOException {
-		final String key = args[0];
-		final String query = args[1];
+		final String url = args[0];
+		final String key = args[1];
+		final String query = args[2];
 
 		final NewsDataRequestInfo requestInfo = new NewsDataRequestInfo();
 		requestInfo.setKey(key);
@@ -30,7 +31,7 @@ public class NewsDataRequestSample {
 
 		final NewsDataRequest newsDataRequest = new NewsDataRequest();
 		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest
-			.getNews(requestInfo, "http://data.knewin.com/news");
+			.getNews(requestInfo, url);
 
 		System.out.println("Número de notícias encontradas: " + responseInfo.getNumDocs());
 
