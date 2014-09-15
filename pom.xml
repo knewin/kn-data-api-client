@@ -4,7 +4,7 @@
 	<groupId>com.knewin.data.client</groupId>
 	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>com.knewin.data.client</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
