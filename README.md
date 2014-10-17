@@ -42,5 +42,13 @@ Exemplo de como fazer consulta na API de vídeos
   
   
   
+VERSÕES
+============
+
+VERSÃO 1.0.1
+------------
+
+- Corrigido os nomes usados para geração do arquivo JSON na classe de filtro NewsQueryFilter.
+
 
 

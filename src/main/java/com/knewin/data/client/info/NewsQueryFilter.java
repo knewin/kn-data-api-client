@@ -22,12 +22,16 @@ public class NewsQueryFilter {
 
 	private String locality;
 
+	@SerializedName("sinceCrawled")
 	private String crawledSinceDate;
 
+	@SerializedName("untilCrawled")
 	private String crawledUntilDate;
 
+	@SerializedName("sincePublished")
 	private String publishedSinceDate;
 
+	@SerializedName("untilPublished")
 	private String publishedUntilDate;
 
 
