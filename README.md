@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.0.2
+------------
+
+- Adicionado equals e hashcode no DataInfo.
+
 VERSÃO 1.0.1
 ------------
 

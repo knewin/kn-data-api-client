@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Parent class that stores generic data.
  * 
- * @since 1.0.0
- * 
  */
 public abstract class DataInfo {
 
@@ -35,7 +33,7 @@ public abstract class DataInfo {
 	 * @return the crawled date
 	 */
 	public String getCrawledDate() {
-		return crawledDate;
+		return this.crawledDate;
 	}
 
 
@@ -45,7 +43,7 @@ public abstract class DataInfo {
 	 * @return the identification
 	 */
 	public Long getId() {
-		return id;
+		return this.id;
 	}
 
 
@@ -55,7 +53,7 @@ public abstract class DataInfo {
 	 * @return the language
 	 */
 	public String getLanguage() {
-		return language;
+		return this.language;
 	}
 
 
@@ -65,7 +63,7 @@ public abstract class DataInfo {
 	 * @return the published date
 	 */
 	public String getPublishedDate() {
-		return publishedDate;
+		return this.publishedDate;
 	}
 
 
@@ -75,7 +73,7 @@ public abstract class DataInfo {
 	 * @return the source name
 	 */
 	public String getSource() {
-		return source;
+		return this.source;
 	}
 
 
@@ -85,7 +83,7 @@ public abstract class DataInfo {
 	 * @return the source identification
 	 */
 	public Integer getSourceId() {
-		return sourceId;
+		return this.sourceId;
 	}
 
 
@@ -95,7 +93,7 @@ public abstract class DataInfo {
 	 * @return the URL
 	 */
 	public String getUrl() {
-		return url;
+		return this.url;
 	}
 
 
@@ -166,6 +164,38 @@ public abstract class DataInfo {
 	 */
 	public void setUrl(final String url) {
 		this.url = url;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (this.getClass() != obj.getClass()) {
+			return false;
+		}
+		final DataInfo other = (DataInfo) obj;
+		if (this.id == null) {
+			if (other.id != null) {
+				return false;
+			}
+		} else if (!this.id.equals(other.id)) {
+			return false;
+		}
+		return true;
 	}
 
 }
