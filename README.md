@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.0.3
+------------
+
+- Corrigido groupId e url do projeto.
+
 VERSÃO 1.0.2
 ------------
 
