@@ -29,6 +29,8 @@ public class NewsDataRequestInfo {
 
 	private int offset;
 
+	private Boolean showOriginalUrl;
+
 	private NewsQuerySort sort;
 
 
@@ -38,7 +40,7 @@ public class NewsDataRequestInfo {
 	 * @return the news fields that should be returned
 	 */
 	public Set<String> getFields() {
-		return fields;
+		return this.fields;
 	}
 
 
@@ -48,7 +50,7 @@ public class NewsDataRequestInfo {
 	 * @return the {@link NewsQueryFilter} instance
 	 */
 	public NewsQueryFilter getFilter() {
-		return filter;
+		return this.filter;
 	}
 
 
@@ -58,7 +60,7 @@ public class NewsDataRequestInfo {
 	 * @return the GMT code
 	 */
 	public String getGmt() {
-		return gmt;
+		return this.gmt;
 	}
 
 
@@ -68,7 +70,7 @@ public class NewsDataRequestInfo {
 	 * @return true if it should group similar news, and false otherwise
 	 */
 	public boolean getGroupSimilar() {
-		return groupSimilar;
+		return this.groupSimilar;
 	}
 
 
@@ -78,7 +80,7 @@ public class NewsDataRequestInfo {
 	 * @return the client's key
 	 */
 	public String getKey() {
-		return key;
+		return this.key;
 	}
 
 
@@ -88,7 +90,7 @@ public class NewsDataRequestInfo {
 	 * @return the list of news identification list
 	 */
 	public Set<Long> getNewsIdList() {
-		return newsIdList;
+		return this.newsIdList;
 	}
 
 
@@ -98,7 +100,7 @@ public class NewsDataRequestInfo {
 	 * @return the offset
 	 */
 	public int getOffset() {
-		return offset;
+		return this.offset;
 	}
 
 
@@ -108,7 +110,12 @@ public class NewsDataRequestInfo {
 	 * @return the query
 	 */
 	public String getQuery() {
-		return query;
+		return this.query;
+	}
+
+
+	public Boolean getShowOriginalUrl() {
+		return this.showOriginalUrl;
 	}
 
 
@@ -118,7 +125,7 @@ public class NewsDataRequestInfo {
 	 * @return the {@link NewsQuerySort} instance
 	 */
 	public NewsQuerySort getSort() {
-		return sort;
+		return this.sort;
 	}
 
 
@@ -137,7 +144,7 @@ public class NewsDataRequestInfo {
 	 * 
 	 * @param filter a {@link NewsQueryFilter} instance
 	 */
-	public void setFilter(NewsQueryFilter filter) {
+	public void setFilter(final NewsQueryFilter filter) {
 		this.filter = filter;
 	}
 
@@ -197,8 +204,13 @@ public class NewsDataRequestInfo {
 	 * 
 	 * @param query the query
 	 */
-	public void setQuery(String query) {
+	public void setQuery(final String query) {
 		this.query = query;
+	}
+
+
+	public void setShowOriginalUrl(final Boolean showOriginalUrl) {
+		this.showOriginalUrl = showOriginalUrl;
 	}
 
 
@@ -214,9 +226,9 @@ public class NewsDataRequestInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", filter=" + filter + ", newsIdList=" + newsIdList
-			+ ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar + ", offset=" + offset + ", sort="
-			+ sort + "]";
+		return "NewsDataRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", newsIdList="
+			+ this.newsIdList + ", fields=" + this.fields + ", gmt=" + this.gmt + ", groupSimilar=" + this.groupSimilar
+			+ ", offset=" + this.offset + ", sort=" + this.sort + "]";
 	}
 
 }

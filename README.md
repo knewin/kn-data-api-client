@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.0.4
+------------
+
+- Adicionado campo showOriginalUrl em NewsDataRequestInfo.
+
 VERSÃO 1.0.3
 ------------
 

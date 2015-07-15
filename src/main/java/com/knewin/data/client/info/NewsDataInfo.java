@@ -36,6 +36,8 @@ public class NewsDataInfo extends DataInfo {
 
 	private String page;
 
+	private String originalUrl;
+
 
 	/**
 	 * Adds a similar doc to the list of similar docs.
@@ -56,7 +58,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the author
 	 */
 	public String getAuthor() {
-		return author;
+		return this.author;
 	}
 
 
@@ -66,7 +68,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the category
 	 */
 	public String getCategory() {
-		return category;
+		return this.category;
 	}
 
 
@@ -76,7 +78,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the content
 	 */
 	public String getContent() {
-		return content;
+		return this.content;
 	}
 
 
@@ -86,7 +88,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the domain
 	 */
 	public String getDomain() {
-		return domain;
+		return this.domain;
 	}
 
 
@@ -96,7 +98,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the hat
 	 */
 	public String getHat() {
-		return hat;
+		return this.hat;
 	}
 
 
@@ -106,7 +108,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return a list of images
 	 */
 	public Collection<ImageNewsDataInfo> getImageHits() {
-		return imageHits;
+		return this.imageHits;
 	}
 
 
@@ -116,7 +118,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the locality
 	 */
 	public String getLocality() {
-		return locality;
+		return this.locality;
 	}
 
 
@@ -126,7 +128,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the page
 	 */
 	public String getPage() {
-		return page;
+		return this.page;
 	}
 
 
@@ -136,7 +138,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return a list of similar news
 	 */
 	public Collection<NewsDataInfo> getSimilar() {
-		return similar;
+		return this.similar;
 	}
 
 
@@ -146,7 +148,7 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the subtitle
 	 */
 	public String getSubtitle() {
-		return subtitle;
+		return this.subtitle;
 	}
 
 
@@ -156,7 +158,12 @@ public class NewsDataInfo extends DataInfo {
 	 * @return the title
 	 */
 	public String getTitle() {
-		return title;
+		return this.title;
+	}
+
+
+	public String getOriginalUrl() {
+		return this.originalUrl;
 	}
 
 
@@ -215,7 +222,7 @@ public class NewsDataInfo extends DataInfo {
 	 * 
 	 * @param imageHits a list of images
 	 */
-	public void setImageHits(Collection<ImageNewsDataInfo> imageHits) {
+	public void setImageHits(final Collection<ImageNewsDataInfo> imageHits) {
 		this.imageHits = imageHits;
 	}
 
@@ -225,7 +232,7 @@ public class NewsDataInfo extends DataInfo {
 	 * 
 	 * @param locality the locality
 	 */
-	public void setLocality(String locality) {
+	public void setLocality(final String locality) {
 		this.locality = locality;
 	}
 
@@ -270,11 +277,17 @@ public class NewsDataInfo extends DataInfo {
 	}
 
 
+	public void setOriginalUrl(final String originalUrl) {
+		this.originalUrl = originalUrl;
+	}
+
+
 	@Override
 	public String toString() {
-		return "NewsDataInfo [domain=" + domain + ", title=" + title + ", subtitle=" + subtitle + ", author=" + author
-			+ ", content=" + content + ", similar=" + similar + ", imageHits=" + imageHits + ", category=" + category
-			+ ", hat=" + hat + ", locality=" + locality + ", page=" + page + "]";
+		return "NewsDataInfo [domain=" + this.domain + ", title=" + this.title + ", subtitle=" + this.subtitle + ", author="
+			+ this.author + ", content=" + this.content + ", similar=" + this.similar + ", imageHits=" + this.imageHits
+			+ ", category=" + this.category + ", hat=" + this.hat + ", locality=" + this.locality + ", page=" + this.page
+			+ "]";
 	}
 
 }

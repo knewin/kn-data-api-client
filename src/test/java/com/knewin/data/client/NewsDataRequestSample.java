@@ -30,13 +30,14 @@ public class NewsDataRequestSample {
 		requestInfo.setQuery(query);
 
 		final NewsDataRequest newsDataRequest = new NewsDataRequest();
-		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest
-			.getNews(requestInfo, url);
+		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest.getNews(requestInfo, url);
 
 		System.out.println("Número de notícias encontradas: " + responseInfo.getNumDocs());
 
 		System.out.println("Títulos das notícias recuperadas");
-		responseInfo.getHits().forEach(newsDataInfo -> System.out.println("   - " + newsDataInfo.getTitle()));
+		for (final NewsDataInfo newsDataInfo : responseInfo.getHits()) {
+			System.out.println("   - " + newsDataInfo.getTitle());
+		}
 	}
 
 }
