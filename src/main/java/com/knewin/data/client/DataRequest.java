@@ -1,6 +1,5 @@
 package com.knewin.data.client;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import org.apache.http.client.config.RequestConfig;
@@ -22,7 +21,7 @@ import com.google.gson.Gson;
  */
 public abstract class DataRequest {
 
-	final Gson jsonBuilder = new Gson();
+	protected final Gson jsonBuilder = new Gson();
 
 
 	/**
@@ -32,15 +31,17 @@ public abstract class DataRequest {
 	 * 
 	 * @return the response content
 	 * 
-	 * @throws IOException error in case of problems to request remote content
+	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	String request(final String url) throws IOException {
+	String request(final String url) throws DataRequestException {
 		final RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(30000).setSocketTimeout(30000)
 			.setConnectTimeout(30000).build();
 
 		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(url, httpClient);
 
+		} catch (final Exception e) {
+			throw new DataRequestException(e);
 		}
 	}
 
@@ -53,11 +54,13 @@ public abstract class DataRequest {
 	 * 
 	 * @return the response content
 	 * 
-	 * @throws IOException error in case of problems to request remote content
+	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	String request(final String url, final CloseableHttpClient httpClient) throws IOException {
+	String request(final String url, final CloseableHttpClient httpClient) throws DataRequestException {
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))) {
 			return EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+		} catch (final Exception e) {
+			throw new DataRequestException(e);
 		}
 	}
 
@@ -70,15 +73,16 @@ public abstract class DataRequest {
 	 * 
 	 * @return the response content
 	 * 
-	 * @throws IOException error in case of problems to request remote content
+	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	String request(final String bodyContent, final String url) throws IOException {
+	String request(final String bodyContent, final String url) throws DataRequestException {
 		final RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(30000).setSocketTimeout(30000)
 			.setConnectTimeout(30000).build();
 
 		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(bodyContent, url, httpClient);
-
+		} catch (final Exception e) {
+			throw new DataRequestException(e);
 		}
 	}
 
@@ -92,14 +96,16 @@ public abstract class DataRequest {
 	 * 
 	 * @return the response content
 	 * 
-	 * @throws IOException error in case of problems to request remote content
+	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	String request(final String postContent, final String url, final CloseableHttpClient httpClient) throws IOException {
+	String request(final String postContent, final String url, final CloseableHttpClient httpClient) throws DataRequestException {
 		final HttpPost httpPost = new HttpPost(url);
 		httpPost.setEntity(new StringEntity(postContent, StandardCharsets.UTF_8));
 
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
 			return EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+		} catch (final Exception e) {
+			throw new DataRequestException(e);
 		}
 	}
 

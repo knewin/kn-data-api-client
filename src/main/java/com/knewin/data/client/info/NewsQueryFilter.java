@@ -34,6 +34,8 @@ public class NewsQueryFilter {
 	@SerializedName("untilPublished")
 	private String publishedUntilDate;
 
+	private SourceLocality sourceLocality;
+
 
 	/**
 	 * Get the category filter.
@@ -52,7 +54,7 @@ public class NewsQueryFilter {
 	 * 	Format: YYYY-MM-DDThh:mm:ssTZD (eg., 1997-07-16T19:20:30+0300)
 	 * </code>
 	 * 
-	 * @return
+	 * @return the crawled since date
 	 */
 	public String getCrawledSinceDate() {
 		return this.crawledSinceDate;
@@ -129,6 +131,16 @@ public class NewsQueryFilter {
 
 	public Set<Integer> getSourceIdList() {
 		return this.sourceIdList;
+	}
+
+
+	/**
+	 * Get the {@link SourceLocality} instance.
+	 * 
+	 * @return the {@link SourceLocality} instance
+	 */
+	public SourceLocality getSourceLocality() {
+		return this.sourceLocality;
 	}
 
 
@@ -228,12 +240,22 @@ public class NewsQueryFilter {
 	}
 
 
+	/**
+	 * Set a {@link SourceLocality} instance.
+	 * 
+	 * @param sourceLocality a {@link SourceLocality} instance
+	 */
+	public void setSourceLocality(final SourceLocality sourceLocality) {
+		this.sourceLocality = sourceLocality;
+	}
+
+
 	@Override
 	public String toString() {
-		return "NewsQueryFilter [sourceIdList=" + sourceIdList + ", language=" + language + ", category=" + category
-			+ ", locality=" + locality + ", crawledSinceDate=" + crawledSinceDate + ", crawledUntilDate="
-			+ crawledUntilDate + ", publishedSinceDate=" + publishedSinceDate + ", publishedUntilDate="
-			+ publishedUntilDate + "]";
+		return "NewsQueryFilter [sourceIdList=" + this.sourceIdList + ", language=" + this.language + ", category=" + this.category
+			+ ", locality=" + this.locality + ", crawledSinceDate=" + this.crawledSinceDate + ", crawledUntilDate="
+			+ this.crawledUntilDate + ", publishedSinceDate=" + this.publishedSinceDate + ", publishedUntilDate="
+			+ this.publishedUntilDate + ", sourceLocality=" + this.sourceLocality + "]";
 	}
 
 }

@@ -45,6 +45,12 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.1.0
+------------
+
+- Criado DataRequestException para identificar a exceção gerada.
+- Adicionado objeto SourceLocality em NewsQueryFilter para filtro por localidade de fontes. 
+
 VERSÃO 1.0.4
 ------------
 

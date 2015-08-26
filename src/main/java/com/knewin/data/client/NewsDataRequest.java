@@ -1,6 +1,5 @@
 package com.knewin.data.client;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -31,10 +30,10 @@ public class NewsDataRequest extends DataRequest {
 	 * 
 	 * @return a {@link DataResponseInfo} instance
 	 * 
-	 * @throws IOException error when requesting data from web service
+	 * @throws DataRequestException error when requesting data from web service
 	 */
 	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url,
-		final CloseableHttpClient httpClient) throws IOException {
+		final CloseableHttpClient httpClient) throws DataRequestException {
 		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url, httpClient));
 	}
 
@@ -47,9 +46,9 @@ public class NewsDataRequest extends DataRequest {
 	 * 
 	 * @return a {@link DataResponseInfo} instance
 	 * 
-	 * @throws IOException error when requesting data from web service
+	 * @throws DataRequestException error when requesting data from web service
 	 */
-	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url) throws IOException {
+	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url) throws DataRequestException {
 		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url));
 	}
 
