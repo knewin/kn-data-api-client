@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.2.0
+------------
+- Adicionada a possibilidade de informar o operador default para busca de notícias. 
+
+
 VERSÃO 1.1.0
 ------------
 

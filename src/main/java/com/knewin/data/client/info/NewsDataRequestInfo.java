@@ -33,6 +33,18 @@ public class NewsDataRequestInfo {
 
 	private NewsQuerySort sort;
 
+	private String defaultOperator;
+
+
+	/**
+	 * Get the default operator.
+	 * 
+	 * @return the default operator
+	 */
+	public String getDefaultOperator() {
+		return defaultOperator;
+	}
+
 
 	/**
 	 * Get the news fields that should be returned.
@@ -126,6 +138,16 @@ public class NewsDataRequestInfo {
 	 */
 	public NewsQuerySort getSort() {
 		return this.sort;
+	}
+
+
+	/**
+	 * Set the default operator.
+	 * 
+	 * @param defaultOperator the default operator
+	 */
+	public void setDefaultOperator(final String defaultOperator) {
+		this.defaultOperator = defaultOperator;
 	}
 
 
@@ -226,9 +248,9 @@ public class NewsDataRequestInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", newsIdList="
-			+ this.newsIdList + ", fields=" + this.fields + ", gmt=" + this.gmt + ", groupSimilar=" + this.groupSimilar
-			+ ", offset=" + this.offset + ", sort=" + this.sort + "]";
+		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", filter=" + filter + ", newsIdList=" + newsIdList
+			+ ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar + ", offset=" + offset
+			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator + "]";
 	}
 
 }
