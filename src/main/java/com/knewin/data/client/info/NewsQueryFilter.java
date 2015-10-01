@@ -36,6 +36,12 @@ public class NewsQueryFilter {
 
 	private SourceLocality sourceLocality;
 
+	@SerializedName("sinceUniversal")
+	private String universalSinceDate;
+
+	@SerializedName("untilUniversal")
+	private String universalUntilDate;
+
 
 	/**
 	 * Get the category filter.
@@ -145,6 +151,34 @@ public class NewsQueryFilter {
 
 
 	/**
+	 * Get the universal since date. <br>
+	 * <br>
+	 * <code>
+	 * 	Format: YYYY-MM-DDThh:mm:ssTZD (eg., 1997-07-16T19:20:30+0300)
+	 * </code>
+	 * 
+	 * @return the universal since date
+	 */
+	public String getUniversalSinceDate() {
+		return this.universalSinceDate;
+	}
+
+
+	/**
+	 * Get the until universal date.<br>
+	 * <br>
+	 * <code>
+	 * 	Format: YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+0300)
+	 * </code>
+	 * 
+	 * @return the until universal date
+	 */
+	public String getUniversalUntilDate() {
+		return this.universalUntilDate;
+	}
+
+
+	/**
 	 * Set the category.
 	 * 
 	 * @param category the category
@@ -250,12 +284,41 @@ public class NewsQueryFilter {
 	}
 
 
+	/**
+	 * Set the universal since date.<br>
+	 * <br>
+	 * <code>
+	 * 	Format: YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+0300)
+	 * </code>
+	 * 
+	 * @param universalSinceDate the universal since date
+	 */
+	public void setUniversalSinceDate(final String universalSinceDate) {
+		this.universalSinceDate = universalSinceDate;
+	}
+
+
+	/**
+	 * Set the universal until date.<br>
+	 * <br>
+	 * <code>
+	 * 	Format: YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+0300)
+	 * </code>
+	 * 
+	 * @param universalUntilDate the universal until date
+	 */
+	public void setUniversalUntilDate(final String universalUntilDate) {
+		this.universalUntilDate = universalUntilDate;
+	}
+
+
 	@Override
 	public String toString() {
 		return "NewsQueryFilter [sourceIdList=" + this.sourceIdList + ", language=" + this.language + ", category=" + this.category
 			+ ", locality=" + this.locality + ", crawledSinceDate=" + this.crawledSinceDate + ", crawledUntilDate="
 			+ this.crawledUntilDate + ", publishedSinceDate=" + this.publishedSinceDate + ", publishedUntilDate="
-			+ this.publishedUntilDate + ", sourceLocality=" + this.sourceLocality + "]";
+			+ this.publishedUntilDate + ", sourceLocality=" + this.sourceLocality + ", universalSinceDate="
+			+ this.universalSinceDate + ", universalUntilDate=" + this.universalUntilDate + "]";
 	}
 
 }
