@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.3.1
+------------
+- Adicionado tratamento de exceção para retornar o erro e a mensagem de exceção. 
+
+
 VERSÃO 1.3.0
 ------------
 - Adicionada a possibilidade de informar o range (since, until) da data universal. 

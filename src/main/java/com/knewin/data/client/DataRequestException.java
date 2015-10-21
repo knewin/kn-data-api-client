@@ -20,4 +20,14 @@ public class DataRequestException extends IOException {
 		super(cause);
 	}
 
+
+	/**
+	 * @see IOException#IOException(String)
+	 * 
+	 * @param message the detail message
+	 */
+	public DataRequestException(final String message) {
+		super(message);
+	}
+
 }

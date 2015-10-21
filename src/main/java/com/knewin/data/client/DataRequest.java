@@ -1,5 +1,6 @@
 package com.knewin.data.client;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import org.apache.http.client.config.RequestConfig;
@@ -39,7 +40,8 @@ public abstract class DataRequest {
 
 		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(url, httpClient);
-
+		} catch (final DataRequestException e) {
+			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e);
 		}
@@ -58,7 +60,9 @@ public abstract class DataRequest {
 	 */
 	String request(final String url, final CloseableHttpClient httpClient) throws DataRequestException {
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))) {
-			return EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+			return this.handleResponse(httpResponse);
+		} catch (final DataRequestException e) {
+			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e);
 		}
@@ -81,6 +85,8 @@ public abstract class DataRequest {
 
 		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(bodyContent, url, httpClient);
+		} catch (final DataRequestException e) {
+			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e);
 		}
@@ -103,10 +109,21 @@ public abstract class DataRequest {
 		httpPost.setEntity(new StringEntity(postContent, StandardCharsets.UTF_8));
 
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
-			return EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+			return this.handleResponse(httpResponse);
+		} catch (final DataRequestException e) {
+			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e);
 		}
+	}
+
+
+	private String handleResponse(final CloseableHttpResponse httpResponse) throws IOException, DataRequestException {
+		final String responseBody = EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+		if (httpResponse.getStatusLine().getStatusCode() < 400) {
+			return responseBody;
+		}
+		throw new DataRequestException(httpResponse.getStatusLine().getReasonPhrase() + "\nResponse body: " + responseBody);
 	}
 
 }
