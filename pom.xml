@@ -4,7 +4,7 @@
 	<groupId>com.knewin</groupId>
 	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.3.1</version>
+	<version>1.3.2</version>
 	<name>com.knewin.data.client</name>
 	<url>https://github.com/knewin/com.knewin.data.client</url>
 	<dependencies>

@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.3.2
+------------
+- Alterado HttpClient para suportar GZIP. 
+
+
 VERSÃO 1.3.1
 ------------
 - Adicionado tratamento de exceção para retornar o erro e a mensagem de exceção. 

@@ -3,13 +3,14 @@ package com.knewin.data.client;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 import com.google.gson.Gson;
@@ -38,7 +39,7 @@ public abstract class DataRequest {
 		final RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(30000).setSocketTimeout(30000)
 			.setConnectTimeout(30000).build();
 
-		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
+		try (final CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(url, httpClient);
 		} catch (final DataRequestException e) {
 			throw e;
@@ -83,7 +84,7 @@ public abstract class DataRequest {
 		final RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(30000).setSocketTimeout(30000)
 			.setConnectTimeout(30000).build();
 
-		try (final CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build()) {
+		try (final CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(bodyContent, url, httpClient);
 		} catch (final DataRequestException e) {
 			throw e;
@@ -119,7 +120,8 @@ public abstract class DataRequest {
 
 
 	private String handleResponse(final CloseableHttpResponse httpResponse) throws IOException, DataRequestException {
-		final String responseBody = EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
+		final HttpEntity entity = httpResponse.getEntity();
+		final String responseBody = EntityUtils.toString(entity, StandardCharsets.UTF_8);
 		if (httpResponse.getStatusLine().getStatusCode() < 400) {
 			return responseBody;
 		}
