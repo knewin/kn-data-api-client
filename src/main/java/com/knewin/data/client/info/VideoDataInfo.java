@@ -106,7 +106,7 @@ public class VideoDataInfo extends DataInfo {
 
 
 	/**
-	 * Get the start image URL
+	 * Get the start image URL.
 	 * 
 	 * @return the start image URL
 	 */

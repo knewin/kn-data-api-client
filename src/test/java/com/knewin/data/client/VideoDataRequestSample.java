@@ -10,7 +10,12 @@ import com.knewin.data.client.info.VideoDataInfo;
  * 
  * @since 1.0.0
  */
-public class VideoDataRequestSample {
+public final class VideoDataRequestSample {
+
+	private VideoDataRequestSample() {
+
+	}
+
 
 	/**
 	 * Show an example of how to call the web service to get videos.

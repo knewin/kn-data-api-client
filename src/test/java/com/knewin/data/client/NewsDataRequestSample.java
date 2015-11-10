@@ -11,7 +11,12 @@ import com.knewin.data.client.info.NewsDataRequestInfo;
  * 
  * @since 1.0.0
  */
-public class NewsDataRequestSample {
+public final class NewsDataRequestSample {
+	
+	
+	private NewsDataRequestSample() {
+		
+	}
 
 	/**
 	 * Show an example of how to call the web service to get news.
