@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.4.1
+------------
+- Corrigida adição da exceção no DataRequestException.
+
+
 VERSÃO 1.4.0
 ------------
 - Adicinada a requisição completa na exceção DataRequestException.

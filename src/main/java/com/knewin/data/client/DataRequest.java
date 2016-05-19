@@ -42,6 +42,7 @@ public abstract class DataRequest {
 		try (final CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(url, httpClient);
 		} catch (final DataRequestException e) {
+			e.setRequest(url);
 			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e, url);
@@ -63,6 +64,7 @@ public abstract class DataRequest {
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))) {
 			return this.handleResponse(httpResponse);
 		} catch (final DataRequestException e) {
+			e.setRequest(url);
 			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e, url);
@@ -87,6 +89,7 @@ public abstract class DataRequest {
 		try (final CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
 			return this.request(bodyContent, url, httpClient);
 		} catch (final DataRequestException e) {
+			e.setRequest(bodyContent);
 			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e, bodyContent);
@@ -112,6 +115,7 @@ public abstract class DataRequest {
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
 			return this.handleResponse(httpResponse);
 		} catch (final DataRequestException e) {
+			e.setRequest(postContent);
 			throw e;
 		} catch (final Exception e) {
 			throw new DataRequestException(e, postContent);
