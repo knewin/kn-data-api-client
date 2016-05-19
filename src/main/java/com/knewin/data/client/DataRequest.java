@@ -44,7 +44,7 @@ public abstract class DataRequest {
 		} catch (final DataRequestException e) {
 			throw e;
 		} catch (final Exception e) {
-			throw new DataRequestException(e);
+			throw new DataRequestException(e, url);
 		}
 	}
 
@@ -65,7 +65,7 @@ public abstract class DataRequest {
 		} catch (final DataRequestException e) {
 			throw e;
 		} catch (final Exception e) {
-			throw new DataRequestException(e);
+			throw new DataRequestException(e, url);
 		}
 	}
 
@@ -89,7 +89,7 @@ public abstract class DataRequest {
 		} catch (final DataRequestException e) {
 			throw e;
 		} catch (final Exception e) {
-			throw new DataRequestException(e);
+			throw new DataRequestException(e, bodyContent);
 		}
 	}
 
@@ -114,7 +114,7 @@ public abstract class DataRequest {
 		} catch (final DataRequestException e) {
 			throw e;
 		} catch (final Exception e) {
-			throw new DataRequestException(e);
+			throw new DataRequestException(e, postContent);
 		}
 	}
 

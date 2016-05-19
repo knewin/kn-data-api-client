@@ -45,6 +45,11 @@ Exemplo de como fazer consulta na API de vídeos
 VERSÕES
 ============
 
+VERSÃO 1.4.0
+------------
+- Adicinada a requisição completa na exceção DataRequestException.
+
+
 VERSÃO 1.3.3
 ------------
 - Atualizada a biblioteca HttpClient para a versão 4.5.1. 
