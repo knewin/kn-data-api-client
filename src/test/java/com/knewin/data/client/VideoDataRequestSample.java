@@ -29,20 +29,15 @@ public final class VideoDataRequestSample {
 		final String key = args[1];
 		final String query = args[2];
 
-		final String fullUrl = url + "?k=" + key + "&q=" + query;
+		final String getUrl = url + "?k=" + key + "&q=" + query;
 
 		final VideoDataRequest videoDataRequest = new VideoDataRequest();
-		final DataResponseInfo<VideoDataInfo> responseInfo = videoDataRequest.getVideos(fullUrl);
+		final DataResponseInfo<VideoDataInfo> responseInfo = videoDataRequest.getVideos(getUrl);
 
 		System.out.println("Número de vídeos encontrados: " + responseInfo.getNumDocs());
 
 		System.out.println("Títulos dos vídeos recuperados");
-		for (final VideoDataInfo info : responseInfo.getHits()) {
-			final String title = info.getTitle();
-			if (title != null) {
-				System.out.println("   - " + title);
-			}
-		}
+		responseInfo.getHits().forEach(v -> System.out.println("   - " + v.getTitle()));
 	}
 
 }

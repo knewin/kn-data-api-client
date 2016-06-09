@@ -4,7 +4,7 @@
 	<groupId>com.knewin</groupId>
 	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.1</version>
+	<version>1.5.0</version>
 	<name>com.knewin.data.client</name>
 	<url>https://github.com/knewin/com.knewin.data.client</url>
 	<dependencies>
@@ -30,10 +30,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.5.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>

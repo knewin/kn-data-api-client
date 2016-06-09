@@ -12,11 +12,11 @@ import com.knewin.data.client.info.NewsDataRequestInfo;
  * @since 1.0.0
  */
 public final class NewsDataRequestSample {
-	
-	
+
 	private NewsDataRequestSample() {
-		
+
 	}
+
 
 	/**
 	 * Show an example of how to call the web service to get news.
@@ -35,14 +35,12 @@ public final class NewsDataRequestSample {
 		requestInfo.setQuery(query);
 
 		final NewsDataRequest newsDataRequest = new NewsDataRequest();
-		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest.getNews(requestInfo, url);
+		final DataResponseInfo<NewsDataInfo> responseInfo = newsDataRequest.request(requestInfo, url);
 
 		System.out.println("Número de notícias encontradas: " + responseInfo.getNumDocs());
 
 		System.out.println("Títulos das notícias recuperadas");
-		for (final NewsDataInfo newsDataInfo : responseInfo.getHits()) {
-			System.out.println("   - " + newsDataInfo.getTitle());
-		}
+		responseInfo.getHits().forEach(n -> System.out.println("   - " + n.getTitle()));
 	}
 
 }

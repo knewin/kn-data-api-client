@@ -11,8 +11,7 @@ public class DataRequestException extends IOException {
 	private static final long serialVersionUID = 7998494582801486759L;
 
 	/**
-	 * The request that generated the error. Can be an url if it was a GET method, or the
-	 * message body in case of a POST.
+	 * The request that generated the error. Can be an url if it was a GET method, or the message body in case of a POST.
 	 */
 	private String request;
 
@@ -21,6 +20,7 @@ public class DataRequestException extends IOException {
 	 * @see IOException#IOException(Throwable)
 	 * 
 	 * @param cause the exception cause
+	 * @param request the query request
 	 */
 	public DataRequestException(final Throwable cause, final String request) {
 		super(cause);
@@ -42,6 +42,7 @@ public class DataRequestException extends IOException {
 	 * @see IOException#IOException(String)
 	 * 
 	 * @param message the detail message
+	 * @param request the query request
 	 */
 	public DataRequestException(final String message, final String request) {
 		super(message);

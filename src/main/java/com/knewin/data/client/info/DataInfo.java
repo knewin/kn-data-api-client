@@ -10,8 +10,6 @@ public abstract class DataInfo {
 
 	private Long id;
 
-	private String url;
-
 	@SerializedName("source_id")
 	private Integer sourceId;
 
@@ -88,16 +86,6 @@ public abstract class DataInfo {
 
 
 	/**
-	 * Get the URL.
-	 * 
-	 * @return the URL
-	 */
-	public String getUrl() {
-		return this.url;
-	}
-
-
-	/**
 	 * Set the crawled date.
 	 * 
 	 * @param crawledDate the crawled date
@@ -154,16 +142,6 @@ public abstract class DataInfo {
 	 */
 	public void setSourceId(final Integer sourceId) {
 		this.sourceId = sourceId;
-	}
-
-
-	/**
-	 * Set the URL.
-	 * 
-	 * @param url the URL
-	 */
-	public void setUrl(final String url) {
-		this.url = url;
 	}
 
 

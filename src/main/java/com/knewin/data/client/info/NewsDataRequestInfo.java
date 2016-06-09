@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * @since 1.0.0
  * 
  */
-public class NewsDataRequestInfo {
+public class NewsDataRequestInfo extends DataRequestInfo {
 
 	private String key;
 
@@ -27,8 +27,6 @@ public class NewsDataRequestInfo {
 
 	private boolean groupSimilar;
 
-	private int offset;
-
 	private Boolean showOriginalUrl;
 
 	private NewsQuerySort sort;
@@ -42,7 +40,7 @@ public class NewsDataRequestInfo {
 	 * @return the default operator
 	 */
 	public String getDefaultOperator() {
-		return defaultOperator;
+		return this.defaultOperator;
 	}
 
 
@@ -103,16 +101,6 @@ public class NewsDataRequestInfo {
 	 */
 	public Set<Long> getNewsIdList() {
 		return this.newsIdList;
-	}
-
-
-	/**
-	 * Get the offset.
-	 * 
-	 * @return the offset
-	 */
-	public int getOffset() {
-		return this.offset;
 	}
 
 
@@ -212,16 +200,6 @@ public class NewsDataRequestInfo {
 
 
 	/**
-	 * Set the offset.
-	 * 
-	 * @param offset the offset
-	 */
-	public void setOffset(final int offset) {
-		this.offset = offset;
-	}
-
-
-	/**
 	 * Set the query.
 	 * 
 	 * @param query the query
@@ -248,9 +226,10 @@ public class NewsDataRequestInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", filter=" + filter + ", newsIdList=" + newsIdList
-			+ ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar + ", offset=" + offset
-			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator + "]";
+		return "NewsDataRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", newsIdList="
+			+ this.newsIdList + ", fields=" + this.fields + ", gmt=" + this.gmt + ", groupSimilar=" + this.groupSimilar
+			+ ", showOriginalUrl=" + this.showOriginalUrl + ", sort=" + this.sort + ", defaultOperator=" + this.defaultOperator
+			+ ", getOffset()=" + this.getOffset() + "]";
 	}
 
 }

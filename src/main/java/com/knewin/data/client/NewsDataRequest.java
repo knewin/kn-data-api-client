@@ -1,10 +1,7 @@
 package com.knewin.data.client;
 
-import java.lang.reflect.Type;
-
 import org.apache.http.impl.client.CloseableHttpClient;
 
-import com.google.gson.reflect.TypeToken;
 import com.knewin.data.client.info.DataResponseInfo;
 import com.knewin.data.client.info.NewsDataInfo;
 import com.knewin.data.client.info.NewsDataRequestInfo;
@@ -15,11 +12,7 @@ import com.knewin.data.client.info.NewsDataRequestInfo;
  * @since 1.0.0
  * 
  */
-public class NewsDataRequest extends DataRequest {
-
-	private final Type responseTypeClass = new TypeToken<DataResponseInfo<NewsDataInfo>>() {
-	}.getType();
-
+public class NewsDataRequest extends DataRequest<NewsDataRequestInfo, NewsDataInfo> {
 
 	/**
 	 * Request news from web service.
@@ -31,10 +24,13 @@ public class NewsDataRequest extends DataRequest {
 	 * @return a {@link DataResponseInfo} instance
 	 * 
 	 * @throws DataRequestException error when requesting data from web service
+	 * 
+	 * @deprecated Use {@link NewsDataRequest#request(NewsDataRequestInfo, String, CloseableHttpClient)}
 	 */
+	@Deprecated
 	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url,
 		final CloseableHttpClient httpClient) throws DataRequestException {
-		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url, httpClient));
+		return super.request(requestInfo, url, httpClient);
 	}
 
 
@@ -47,14 +43,12 @@ public class NewsDataRequest extends DataRequest {
 	 * @return a {@link DataResponseInfo} instance
 	 * 
 	 * @throws DataRequestException error when requesting data from web service
+	 * 
+	 * @deprecated Use {@link NewsDataRequest#request(NewsDataRequestInfo, String, CloseableHttpClient)}
 	 */
+	@Deprecated
 	public DataResponseInfo<NewsDataInfo> getNews(final NewsDataRequestInfo requestInfo, final String url) throws DataRequestException {
-		return this.buildResponse(super.request(super.jsonBuilder.toJson(requestInfo), url));
-	}
-
-
-	private DataResponseInfo<NewsDataInfo> buildResponse(final String json) {
-		return super.jsonBuilder.fromJson(json, this.responseTypeClass);
+		return super.request(requestInfo, url);
 	}
 
 }
