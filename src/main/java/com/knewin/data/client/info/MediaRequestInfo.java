@@ -1,5 +1,7 @@
 package com.knewin.data.client.info;
 
+import java.util.Set;
+
 /**
  * Class that stores query data to request media from web service.
  *
@@ -18,6 +20,8 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends Dat
 	private String gmt;
 
 	private RequestSort sort;
+
+	private Set<Long> ids;
 
 
 	public String getKey() {
@@ -70,10 +74,20 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends Dat
 	}
 
 
+	public Set<Long> getIds() {
+		return this.ids;
+	}
+
+
+	public void setIds(final Set<Long> ids) {
+		this.ids = ids;
+	}
+
+
 	@Override
 	public String toString() {
 		return "MediaRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", gmt=" + this.gmt
-			+ ", sort=" + this.sort + ", getOffset()=" + this.getOffset() + "]";
+			+ ", sort=" + this.sort + ", ids=" + this.ids + ", getOffset()=" + this.getOffset() + "]";
 	}
 
 }

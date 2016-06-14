@@ -73,6 +73,11 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 1.5.1
+------------
+- Adicionado filtro para busca por ids nas coleções de Rádio e TV.
+
+
 VERSÃO 1.5.0
 ------------
 - Adicionado suporte para busca através das coleções de Rádio e TV.
