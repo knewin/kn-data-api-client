@@ -4,20 +4,20 @@
 	<groupId>com.knewin</groupId>
 	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.5.1</version>
+	<version>1.6.0</version>
 	<name>com.knewin.data.client</name>
 	<url>https://github.com/knewin/com.knewin.data.client</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.3</version>
+			<version>2.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -39,7 +39,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.3</version>
+				<version>3.01</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -53,7 +53,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.5</version>
+				<version>3.0.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -67,27 +67,6 @@
 						<exclude>**/.git/**</exclude>
 						<exclude>**/*.DS_Store</exclude>
 					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<useProjectReferences>true</useProjectReferences>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-					<sourceExcludes>
-						<sourceExclude>**/.git/**</sourceExclude>
-						<sourceExclude>**/.DS_Store</sourceExclude>
-					</sourceExcludes>
-					<additionalBuildcommands>
-						<buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature>
-					</additionalProjectnatures>
 				</configuration>
 			</plugin>
 		</plugins>

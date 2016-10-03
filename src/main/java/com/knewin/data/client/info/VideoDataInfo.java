@@ -76,13 +76,13 @@ public class VideoDataInfo extends OnlineDataInfo {
 	@Override
 	public String toString() {
 		return "VideoDataInfo [videoUrl=" + this.videoUrl + ", description=" + this.description + ", keywords=" + this.keywords
-			+ ", startImage=" + this.startImage + ", duration=" + this.duration + ", getOriginalUrl()=" + this.getOriginalUrl()
-			+ ", getUrl()=" + this.getUrl() + ", getAuthor()=" + this.getAuthor() + ", getTitle()=" + this.getTitle()
-			+ ", getSubtitle()=" + this.getSubtitle() + ", getCategory()=" + this.getCategory() + ", getHat()=" + this.getHat()
-			+ ", getLocality()=" + this.getLocality() + ", getDomain()=" + this.getDomain() + ", getCrawledDate()="
-			+ this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()=" + this.getLanguage()
-			+ ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource() + ", getSourceId()="
-			+ this.getSourceId() + "]";
+			+ ", startImage=" + this.startImage + ", duration=" + this.duration + ", getOriginalUrl()="
+			+ this.getOriginalUrl() + ", getUrl()=" + this.getUrl() + ", getAuthor()=" + this.getAuthor() + ", getTitle()="
+			+ this.getTitle() + ", getSubtitle()=" + this.getSubtitle() + ", getCategory()=" + this.getCategory()
+			+ ", getHat()=" + this.getHat() + ", getLocality()=" + this.getLocality() + ", getDomain()=" + this.getDomain()
+			+ ", getCrawledDate()=" + this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()="
+			+ this.getLanguage() + ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource()
+			+ ", getSourceId()=" + this.getSourceId() + ", getSourceLocalities()=" + this.getSourceLocalities() + "]";
 	}
 
 }

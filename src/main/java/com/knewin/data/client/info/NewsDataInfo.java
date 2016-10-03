@@ -78,13 +78,14 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataInfo [content=" + this.content + ", similar=" + this.similar + ", imageHits=" + this.imageHits + ", page="
-			+ this.page + ", getOriginalUrl()=" + this.getOriginalUrl() + ", getUrl()=" + this.getUrl() + ", getAuthor()="
-			+ this.getAuthor() + ", getTitle()=" + this.getTitle() + ", getSubtitle()=" + this.getSubtitle()
-			+ ", getCategory()=" + this.getCategory() + ", getHat()=" + this.getHat() + ", getLocality()=" + this.getLocality()
-			+ ", getDomain()=" + this.getDomain() + ", getCrawledDate()=" + this.getCrawledDate() + ", getId()=" + this.getId()
-			+ ", getLanguage()=" + this.getLanguage() + ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()="
-			+ this.getSource() + ", getSourceId()=" + this.getSourceId() + "]";
+		return "NewsDataInfo [content=" + this.content + ", similar=" + this.similar + ", imageHits=" + this.imageHits
+			+ ", page=" + this.page + ", getOriginalUrl()=" + this.getOriginalUrl() + ", getUrl()=" + this.getUrl()
+			+ ", getAuthor()=" + this.getAuthor() + ", getTitle()=" + this.getTitle() + ", getSubtitle()="
+			+ this.getSubtitle() + ", getCategory()=" + this.getCategory() + ", getHat()=" + this.getHat()
+			+ ", getLocality()=" + this.getLocality() + ", getDomain()=" + this.getDomain() + ", getCrawledDate()="
+			+ this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()=" + this.getLanguage()
+			+ ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource() + ", getSourceId()="
+			+ this.getSourceId() + ", getSourceLocalities()=" + this.getSourceLocalities() + "]";
 	}
 
 }

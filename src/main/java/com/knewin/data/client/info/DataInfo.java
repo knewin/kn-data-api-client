@@ -1,5 +1,7 @@
 package com.knewin.data.client.info;
 
+import java.util.Collection;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -23,6 +25,9 @@ public abstract class DataInfo {
 
 	@SerializedName("lang")
 	private String language;
+
+	@SerializedName("source_locality")
+	private Collection<SourceLocalityInfo> sourceLocalities;
 
 
 	/**
@@ -86,6 +91,14 @@ public abstract class DataInfo {
 
 
 	/**
+	 * @return the source localities
+	 */
+	public Collection<SourceLocalityInfo> getSourceLocalities() {
+		return this.sourceLocalities;
+	}
+
+
+	/**
 	 * Set the crawled date.
 	 * 
 	 * @param crawledDate the crawled date
@@ -142,6 +155,14 @@ public abstract class DataInfo {
 	 */
 	public void setSourceId(final Integer sourceId) {
 		this.sourceId = sourceId;
+	}
+
+
+	/**
+	 * @param sourceLocalities the source localities
+	 */
+	public void setSourceLocalities(final Collection<SourceLocalityInfo> sourceLocalities) {
+		this.sourceLocalities = sourceLocalities;
 	}
 
 

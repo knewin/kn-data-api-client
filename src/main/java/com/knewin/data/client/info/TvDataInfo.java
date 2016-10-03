@@ -10,11 +10,12 @@ public class TvDataInfo extends MediaDataInfo {
 
 	@Override
 	public String toString() {
-		return "TvDataInfo [getMediaUrl()=" + this.getMediaUrl() + ", getStartTime()=" + this.getStartTime() + ", getEndTime()="
-			+ this.getEndTime() + ", getDuration()=" + this.getDuration() + ", getContent()=" + this.getContent()
-			+ ", getCrawledDate()=" + this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()="
-			+ this.getLanguage() + ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource()
-			+ ", getSourceId()=" + this.getSourceId() + "]";
+		return "TvDataInfo [getMediaUrl()=" + this.getMediaUrl() + ", getStartTime()=" + this.getStartTime()
+			+ ", getEndTime()=" + this.getEndTime() + ", getDuration()=" + this.getDuration() + ", getContent()="
+			+ this.getContent() + ", getCrawledDate()=" + this.getCrawledDate() + ", getId()=" + this.getId()
+			+ ", getLanguage()=" + this.getLanguage() + ", getPublishedDate()=" + this.getPublishedDate()
+			+ ", getSource()=" + this.getSource() + ", getSourceId()=" + this.getSourceId() + ", getSourceLocalities()="
+			+ this.getSourceLocalities() + "]";
 	}
 
 }

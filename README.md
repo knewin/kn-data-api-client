@@ -73,6 +73,13 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 1.6.0
+------------
+- A resposta da consulta agora retorna a localidade (país/estado) da fonte.
+- Atualizado algumas dependências para compilação.
+- Removido dependências obsoletas.
+
+
 VERSÃO 1.5.1
 ------------
 - Adicionado filtro para busca por ids nas coleções de Rádio e TV.
