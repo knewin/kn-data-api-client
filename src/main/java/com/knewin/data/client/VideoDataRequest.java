@@ -32,7 +32,7 @@ public class VideoDataRequest extends DataRequest {
 	 */
 	public DataResponseInfo<VideoDataInfo> getVideos(final String url, final CloseableHttpClient httpClient)
 		throws DataRequestException {
-		return super.jsonBuilder.fromJson(super.request(url, httpClient), this.responseTypeClass);
+		return super.jsonBuilder.fromJson(super.get(url, httpClient), this.responseTypeClass);
 	}
 
 
@@ -46,7 +46,7 @@ public class VideoDataRequest extends DataRequest {
 	 * @throws DataRequestException error when requesting data from web service
 	 */
 	public DataResponseInfo<VideoDataInfo> getVideos(final String url) throws DataRequestException {
-		return super.jsonBuilder.fromJson(super.request(url), this.responseTypeClass);
+		return super.jsonBuilder.fromJson(super.get(url), this.responseTypeClass);
 	}
 
 }

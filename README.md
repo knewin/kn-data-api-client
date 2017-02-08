@@ -73,6 +73,10 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 1.7.0
+------------
+- Extraída a classe RestRequest a partir de DataRequest para externalizar métodos simples de requisições.  
+
 VERSÃO 1.6.0
 ------------
 - A resposta da consulta agora retorna a localidade (país/estado) da fonte.
