@@ -73,6 +73,10 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 2.0.0
+------------
+- Adicionado opção de informar mais de uma localidade para busca de notícias.  
+
 VERSÃO 1.7.0
 ------------
 - Extraída a classe RestRequest a partir de DataRequest para externalizar métodos simples de requisições.  
