@@ -73,6 +73,10 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 2.1.0
+------------
+- Adicionado captura de exceção para json malformado.  
+
 VERSÃO 2.0.0
 ------------
 - Adicionado opção de informar mais de uma localidade para busca de notícias.  

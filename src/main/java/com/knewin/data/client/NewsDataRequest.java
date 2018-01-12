@@ -17,7 +17,7 @@ public class NewsDataRequest extends DataRequest<NewsDataRequestInfo, NewsDataIn
 
 	@Override
 	public DataResponseInfo<NewsDataInfo> request(final NewsDataRequestInfo requestInfo, final String url)
-		throws DataRequestException {
+		throws DataRequestException, ParseException {
 		NewsLocalityFilterTranslator.create().withNewsDataRequestInfo(requestInfo).translate();
 		return super.request(requestInfo, url);
 	}
@@ -25,7 +25,7 @@ public class NewsDataRequest extends DataRequest<NewsDataRequestInfo, NewsDataIn
 
 	@Override
 	public DataResponseInfo<NewsDataInfo> request(final NewsDataRequestInfo requestInfo, final String url,
-		final CloseableHttpClient httpClient) throws DataRequestException {
+		final CloseableHttpClient httpClient) throws DataRequestException, ParseException {
 		NewsLocalityFilterTranslator.create().withNewsDataRequestInfo(requestInfo).translate();
 		return super.request(requestInfo, url, httpClient);
 	}
