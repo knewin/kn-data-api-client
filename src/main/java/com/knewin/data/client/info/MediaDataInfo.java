@@ -1,8 +1,12 @@
 package com.knewin.data.client.info;
 
+import java.util.List;
+
+import com.knewin.data.client.info.media.Part;
+
 /**
  * Class that stores media data.
- * 
+ *
  * @since 1.5.0
  *
  */
@@ -18,9 +22,11 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	private String content;
 
+	private List<Part> times;
+
 
 	public String getMediaUrl() {
-		return this.mediaUrl;
+		return mediaUrl;
 	}
 
 
@@ -30,7 +36,7 @@ public abstract class MediaDataInfo extends DataInfo {
 
 
 	public String getStartTime() {
-		return this.startTime;
+		return startTime;
 	}
 
 
@@ -40,7 +46,7 @@ public abstract class MediaDataInfo extends DataInfo {
 
 
 	public String getEndTime() {
-		return this.endTime;
+		return endTime;
 	}
 
 
@@ -50,7 +56,7 @@ public abstract class MediaDataInfo extends DataInfo {
 
 
 	public Integer getDuration() {
-		return this.duration;
+		return duration;
 	}
 
 
@@ -60,12 +66,22 @@ public abstract class MediaDataInfo extends DataInfo {
 
 
 	public String getContent() {
-		return this.content;
+		return content;
 	}
 
 
 	public void setContent(final String content) {
 		this.content = content;
+	}
+
+
+	public List<Part> getTimes() {
+		return times;
+	}
+
+
+	public void setTimes(final List<Part> times) {
+		this.times = times;
 	}
 
 }

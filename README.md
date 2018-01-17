@@ -73,6 +73,10 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 2.2.0
+------------
+- Adicionado campo showTimes em requisições de rádio e TV.
+
 VERSÃO 2.1.0
 ------------
 - Adicionado captura de exceção para json malformado.  

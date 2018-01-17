@@ -6,7 +6,7 @@ import java.util.Set;
  * Class that stores query data to request media from web service.
  *
  * @param <F> the media filter
- * 
+ *
  * @since 1.5.0
  */
 public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends DataRequestInfo {
@@ -22,6 +22,8 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends Dat
 	private RequestSort sort;
 
 	private Set<Long> ids;
+
+	private Boolean showTimes;
 
 
 	public String getKey() {
@@ -84,10 +86,20 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends Dat
 	}
 
 
+	public Boolean getShowTimes() {
+		return showTimes;
+	}
+
+
+	public void setShowTimes(final Boolean showTimes) {
+		this.showTimes = showTimes;
+	}
+
+
 	@Override
 	public String toString() {
 		return "MediaRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", gmt=" + this.gmt
-			+ ", sort=" + this.sort + ", ids=" + this.ids + ", getOffset()=" + this.getOffset() + "]";
+			+ ", sort=" + this.sort + ", ids=" + this.ids + ", getOffset()=" + getOffset() + "]";
 	}
 
 }
