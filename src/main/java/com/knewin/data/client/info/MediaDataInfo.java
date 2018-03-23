@@ -20,6 +20,8 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	private Integer duration;
 
+	private String title;
+
 	private String content;
 
 	private List<Part> times;
@@ -62,6 +64,16 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	public void setDuration(final Integer duration) {
 		this.duration = duration;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 
