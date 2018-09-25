@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 import org.apache.http.impl.client.CloseableHttpClient;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.knewin.data.client.info.DataInfo;
 import com.knewin.data.client.info.DataRequestInfo;
@@ -24,7 +25,7 @@ import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 @SuppressWarnings("restriction")
 public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo> extends RestRequest {
 
-	protected final Gson jsonBuilder = new Gson();
+	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping().create();
 
 
 	/**
@@ -67,7 +68,7 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 				.getActualTypeArguments()[1];
 			final Type responseType = ParameterizedTypeImpl.make(DataResponseInfo.class, new Type[] {argumentType}, null);
 			return this.jsonBuilder.fromJson(json, responseType);
-		} catch (JsonParseException e) {
+		} catch (final JsonParseException e) {
 			throw new ParseException(e, json);
 		}
 	}

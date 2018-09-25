@@ -73,6 +73,14 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
+VERSÃO 3.0.0
+------------
+- Desabilitado html escaping ao gerar o json das notícias.
+
+VERSÃO 2.3.0
+------------
+- Adicionado campo "title" para os documentos de Rádio/TV.
+
 VERSÃO 2.2.0
 ------------
 - Adicionado campo showTimes em requisições de rádio e TV.
