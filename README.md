@@ -73,7 +73,11 @@ Exemplo de como fazer consulta na API de Rádio
 VERSÕES
 ============
 
-VERSÃO 3.0.0
+VERSÃO 2.4.0
+------------
+- Adicionado suporte para requisições de páginas.
+
+VERSÃO 2.3.1
 ------------
 - Desabilitado html escaping ao gerar o json das notícias.
 
