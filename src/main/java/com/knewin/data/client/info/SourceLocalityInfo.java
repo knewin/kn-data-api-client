@@ -9,11 +9,15 @@ public class SourceLocalityInfo {
 
 	private String country;
 
+	private String countryAcronym;
+
 	private String state;
+
+	private String stateAcronym;
 
 
 	public String getCountry() {
-		return this.country;
+		return country;
 	}
 
 
@@ -22,8 +26,18 @@ public class SourceLocalityInfo {
 	}
 
 
+	public String getCountryAcronym() {
+		return countryAcronym;
+	}
+
+
+	public void setCountryAcronym(final String countryAcronym) {
+		this.countryAcronym = countryAcronym;
+	}
+
+
 	public String getState() {
-		return this.state;
+		return state;
 	}
 
 
@@ -32,9 +46,20 @@ public class SourceLocalityInfo {
 	}
 
 
+	public String getStateAcronym() {
+		return stateAcronym;
+	}
+
+
+	public void setStateAcronym(final String stateAcronym) {
+		this.stateAcronym = stateAcronym;
+	}
+
+
 	@Override
 	public String toString() {
-		return "SourceLocalityInfo [country=" + this.country + ", state=" + this.state + "]";
+		return "SourceLocalityInfo [country=" + country + ", countryAcronym=" + countryAcronym + ", state=" + state
+			+ ", stateAcronym=" + stateAcronym + "]";
 	}
 
 }
