@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Class that stores data about video.
- * 
+ *
  * @since 1.0.0
- * 
+ *
  */
 public class VideoDataInfo extends OnlineDataInfo {
 
@@ -24,7 +24,7 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 
 	public String getVideoUrl() {
-		return this.videoUrl;
+		return videoUrl;
 	}
 
 
@@ -34,7 +34,7 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
 
 
@@ -44,7 +44,7 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 
 	public String getKeywords() {
-		return this.keywords;
+		return keywords;
 	}
 
 
@@ -54,7 +54,7 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 
 	public String getStartImage() {
-		return this.startImage;
+		return startImage;
 	}
 
 
@@ -64,7 +64,7 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 
 	public Integer getDuration() {
-		return this.duration;
+		return duration;
 	}
 
 
@@ -75,14 +75,14 @@ public class VideoDataInfo extends OnlineDataInfo {
 
 	@Override
 	public String toString() {
-		return "VideoDataInfo [videoUrl=" + this.videoUrl + ", description=" + this.description + ", keywords=" + this.keywords
-			+ ", startImage=" + this.startImage + ", duration=" + this.duration + ", getOriginalUrl()="
-			+ this.getOriginalUrl() + ", getUrl()=" + this.getUrl() + ", getAuthor()=" + this.getAuthor() + ", getTitle()="
-			+ this.getTitle() + ", getSubtitle()=" + this.getSubtitle() + ", getCategory()=" + this.getCategory()
-			+ ", getHat()=" + this.getHat() + ", getLocality()=" + this.getLocality() + ", getDomain()=" + this.getDomain()
-			+ ", getCrawledDate()=" + this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()="
-			+ this.getLanguage() + ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource()
-			+ ", getSourceId()=" + this.getSourceId() + ", getSourceLocalities()=" + this.getSourceLocalities() + "]";
+		return "VideoDataInfo [videoUrl=" + videoUrl + ", description=" + description + ", keywords=" + keywords
+			+ ", startImage=" + startImage + ", duration=" + duration + ", getOriginalUrl()=" + getOriginalUrl()
+			+ ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor() + ", getTitle()=" + getTitle() + ", getSubtitle()="
+			+ getSubtitle() + ", getCategory()=" + getCategory() + ", getHat()=" + getHat() + ", getLocality()="
+			+ getLocality() + ", getDomain()=" + getDomain() + ", getCrawledDate()=" + getCrawledDate() + ", getId()="
+			+ getId() + ", getLanguage()=" + getLanguage() + ", getPublishedDate()=" + getPublishedDate()
+			+ ", getSource()=" + getSource() + ", getSourceId()=" + getSourceId() + ", getSourceLocalities()="
+			+ getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
 	}
 
 }

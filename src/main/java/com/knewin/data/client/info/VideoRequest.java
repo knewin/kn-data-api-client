@@ -2,15 +2,7 @@ package com.knewin.data.client.info;
 
 import java.util.Set;
 
-import com.google.gson.annotations.SerializedName;
-
-/**
- * Class that stores query data to request news from web service.
- *
- * @since 1.0.0
- *
- */
-public class NewsDataRequestInfo implements DataRequestInfo {
+public class VideoRequest implements DataRequestInfo {
 
 	private String key;
 
@@ -18,20 +10,15 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	private int offset;
 
-	private NewsQueryFilter filter;
+	private VideoRequestFilter filter;
 
-	@SerializedName("newsId")
-	private Set<Long> newsIdList;
+	private RequestSort sort;
+
+	private Set<Long> ids;
 
 	private Set<String> fields;
 
 	private String gmt;
-
-	private boolean groupSimilar;
-
-	private Boolean showOriginalUrl;
-
-	private NewsQuerySort sort;
 
 	private String defaultOperator;
 
@@ -40,24 +27,22 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	private String matchedTermsQuery;
 
 
-	private NewsDataRequestInfo(Builder builder) {
+	private VideoRequest(Builder builder) {
 		key = builder.key;
 		query = builder.query;
 		offset = builder.offset;
 		filter = builder.filter;
-		newsIdList = builder.newsIdList;
+		sort = builder.sort;
+		ids = builder.ids;
 		fields = builder.fields;
 		gmt = builder.gmt;
-		groupSimilar = builder.groupSimilar;
-		showOriginalUrl = builder.showOriginalUrl;
-		sort = builder.sort;
 		defaultOperator = builder.defaultOperator;
 		matchedTerms = builder.matchedTerms;
 		matchedTermsQuery = builder.matchedTermsQuery;
 	}
 
 
-	public NewsDataRequestInfo() {
+	public VideoRequest() {
 	}
 
 
@@ -93,23 +78,33 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public NewsQueryFilter getFilter() {
+	public VideoRequestFilter getFilter() {
 		return filter;
 	}
 
 
-	public void setFilter(NewsQueryFilter filter) {
+	public void setFilter(VideoRequestFilter filter) {
 		this.filter = filter;
 	}
 
 
-	public Set<Long> getNewsIdList() {
-		return newsIdList;
+	public RequestSort getSort() {
+		return sort;
 	}
 
 
-	public void setNewsIdList(Set<Long> newsIdList) {
-		this.newsIdList = newsIdList;
+	public void setSort(RequestSort sort) {
+		this.sort = sort;
+	}
+
+
+	public Set<Long> getIds() {
+		return ids;
+	}
+
+
+	public void setIds(Set<Long> ids) {
+		this.ids = ids;
 	}
 
 
@@ -130,36 +125,6 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	public void setGmt(String gmt) {
 		this.gmt = gmt;
-	}
-
-
-	public boolean isGroupSimilar() {
-		return groupSimilar;
-	}
-
-
-	public void setGroupSimilar(boolean groupSimilar) {
-		this.groupSimilar = groupSimilar;
-	}
-
-
-	public Boolean getShowOriginalUrl() {
-		return showOriginalUrl;
-	}
-
-
-	public void setShowOriginalUrl(Boolean showOriginalUrl) {
-		this.showOriginalUrl = showOriginalUrl;
-	}
-
-
-	public NewsQuerySort getSort() {
-		return sort;
-	}
-
-
-	public void setSort(NewsQuerySort sort) {
-		this.sort = sort;
 	}
 
 
@@ -195,9 +160,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter
-			+ ", newsIdList=" + newsIdList + ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar
-			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator
+		return "VideoRequest [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter + ", sort=" + sort
+			+ ", ids=" + ids + ", fields=" + fields + ", gmt=" + gmt + ", defaultOperator=" + defaultOperator
 			+ ", matchedTerms=" + matchedTerms + ", matchedTermsQuery=" + matchedTermsQuery + "]";
 	}
 
@@ -214,19 +178,15 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 		private int offset;
 
-		private NewsQueryFilter filter;
+		private VideoRequestFilter filter;
 
-		private Set<Long> newsIdList;
+		private RequestSort sort;
+
+		private Set<Long> ids;
 
 		private Set<String> fields;
 
 		private String gmt;
-
-		private boolean groupSimilar;
-
-		private Boolean showOriginalUrl;
-
-		private NewsQuerySort sort;
 
 		private String defaultOperator;
 
@@ -257,14 +217,20 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		}
 
 
-		public Builder withFilter(NewsQueryFilter filter) {
+		public Builder withFilter(VideoRequestFilter filter) {
 			this.filter = filter;
 			return this;
 		}
 
 
-		public Builder withNewsIdList(Set<Long> newsIdList) {
-			this.newsIdList = newsIdList;
+		public Builder withSort(RequestSort sort) {
+			this.sort = sort;
+			return this;
+		}
+
+
+		public Builder withIds(Set<Long> ids) {
+			this.ids = ids;
 			return this;
 		}
 
@@ -277,24 +243,6 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 		public Builder withGmt(String gmt) {
 			this.gmt = gmt;
-			return this;
-		}
-
-
-		public Builder withGroupSimilar(boolean groupSimilar) {
-			this.groupSimilar = groupSimilar;
-			return this;
-		}
-
-
-		public Builder withShowOriginalUrl(Boolean showOriginalUrl) {
-			this.showOriginalUrl = showOriginalUrl;
-			return this;
-		}
-
-
-		public Builder withSort(NewsQuerySort sort) {
-			this.sort = sort;
 			return this;
 		}
 
@@ -317,8 +265,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		}
 
 
-		public NewsDataRequestInfo build() {
-			return new NewsDataRequestInfo(this);
+		public VideoRequest build() {
+			return new VideoRequest(this);
 		}
 	}
 

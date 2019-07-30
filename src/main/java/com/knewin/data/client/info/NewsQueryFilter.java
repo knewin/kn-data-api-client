@@ -46,13 +46,33 @@ public class NewsQueryFilter {
 	private String universalUntilDate;
 
 
+	private NewsQueryFilter(Builder builder) {
+		sourceIdList = builder.sourceIdList;
+		language = builder.language;
+		category = builder.category;
+		locality = builder.locality;
+		crawledSinceDate = builder.crawledSinceDate;
+		crawledUntilDate = builder.crawledUntilDate;
+		publishedSinceDate = builder.publishedSinceDate;
+		publishedUntilDate = builder.publishedUntilDate;
+		sourceLocality = builder.sourceLocality;
+		sourceLocalities = builder.sourceLocalities;
+		universalSinceDate = builder.universalSinceDate;
+		universalUntilDate = builder.universalUntilDate;
+	}
+
+
+	public NewsQueryFilter() {
+	}
+
+
 	/**
 	 * Adds a {@link SourceLocality}.
 	 *
 	 * @param sourceLocality a {@link SourceLocality} instance
 	 */
 	public void addSourceLocality(final SourceLocality sourceLocality) {
-		this.sourceLocalities.add(sourceLocality);
+		sourceLocalities.add(sourceLocality);
 	}
 
 
@@ -62,7 +82,7 @@ public class NewsQueryFilter {
 	 * @return the category filter
 	 */
 	public String getCategory() {
-		return this.category;
+		return category;
 	}
 
 
@@ -76,7 +96,7 @@ public class NewsQueryFilter {
 	 * @return the crawled since date
 	 */
 	public String getCrawledSinceDate() {
-		return this.crawledSinceDate;
+		return crawledSinceDate;
 	}
 
 
@@ -90,7 +110,7 @@ public class NewsQueryFilter {
 	 * @return the crawled until date
 	 */
 	public String getCrawledUntilDate() {
-		return this.crawledUntilDate;
+		return crawledUntilDate;
 	}
 
 
@@ -100,7 +120,7 @@ public class NewsQueryFilter {
 	 * @return a list of languages
 	 */
 	public Set<String> getLanguage() {
-		return this.language;
+		return language;
 	}
 
 
@@ -110,7 +130,7 @@ public class NewsQueryFilter {
 	 * @return the locality
 	 */
 	public String getLocality() {
-		return this.locality;
+		return locality;
 	}
 
 
@@ -124,7 +144,7 @@ public class NewsQueryFilter {
 	 * @return the published since date
 	 */
 	public String getPublishedSinceDate() {
-		return this.publishedSinceDate;
+		return publishedSinceDate;
 	}
 
 
@@ -138,7 +158,7 @@ public class NewsQueryFilter {
 	 * @return the until published date
 	 */
 	public String getPublishedUntilDate() {
-		return this.publishedUntilDate;
+		return publishedUntilDate;
 	}
 
 
@@ -149,7 +169,7 @@ public class NewsQueryFilter {
 	 */
 
 	public Set<Integer> getSourceIdList() {
-		return this.sourceIdList;
+		return sourceIdList;
 	}
 
 
@@ -159,7 +179,7 @@ public class NewsQueryFilter {
 	 * @return the {@link SourceLocality} instance
 	 */
 	SourceLocality getSourceLocality() {
-		return this.sourceLocality;
+		return sourceLocality;
 	}
 
 
@@ -169,7 +189,7 @@ public class NewsQueryFilter {
 	 * @return the {@link SourceLocality}'s
 	 */
 	public Set<SourceLocality> getSourceLocalities() {
-		return this.sourceLocalities;
+		return sourceLocalities;
 	}
 
 
@@ -183,7 +203,7 @@ public class NewsQueryFilter {
 	 * @return the universal since date
 	 */
 	public String getUniversalSinceDate() {
-		return this.universalSinceDate;
+		return universalSinceDate;
 	}
 
 
@@ -197,7 +217,7 @@ public class NewsQueryFilter {
 	 * @return the until universal date
 	 */
 	public String getUniversalUntilDate() {
-		return this.universalUntilDate;
+		return universalUntilDate;
 	}
 
 
@@ -337,11 +357,124 @@ public class NewsQueryFilter {
 
 	@Override
 	public String toString() {
-		return "NewsQueryFilter [sourceIdList=" + this.sourceIdList + ", language=" + this.language + ", category="
-			+ this.category + ", locality=" + this.locality + ", crawledSinceDate=" + this.crawledSinceDate
-			+ ", crawledUntilDate=" + this.crawledUntilDate + ", publishedSinceDate=" + this.publishedSinceDate
-			+ ", publishedUntilDate=" + this.publishedUntilDate + ", sourceLocality=" + this.sourceLocality
-			+ ", universalSinceDate=" + this.universalSinceDate + ", universalUntilDate=" + this.universalUntilDate + "]";
+		return "NewsQueryFilter [sourceIdList=" + sourceIdList + ", language=" + language + ", category=" + category
+			+ ", locality=" + locality + ", crawledSinceDate=" + crawledSinceDate + ", crawledUntilDate="
+			+ crawledUntilDate + ", publishedSinceDate=" + publishedSinceDate + ", publishedUntilDate="
+			+ publishedUntilDate + ", sourceLocality=" + sourceLocality + ", universalSinceDate=" + universalSinceDate
+			+ ", universalUntilDate=" + universalUntilDate + "]";
+	}
+
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	public static final class Builder {
+
+		private Set<Integer> sourceIdList;
+
+		private Set<String> language;
+
+		private String category;
+
+		private String locality;
+
+		private String crawledSinceDate;
+
+		private String crawledUntilDate;
+
+		private String publishedSinceDate;
+
+		private String publishedUntilDate;
+
+		private SourceLocality sourceLocality;
+
+		private Set<SourceLocality> sourceLocalities;
+
+		private String universalSinceDate;
+
+		private String universalUntilDate;
+
+
+		private Builder() {
+		}
+
+
+		public Builder withSourceIdList(Set<Integer> sourceIdList) {
+			this.sourceIdList = sourceIdList;
+			return this;
+		}
+
+
+		public Builder withLanguage(Set<String> language) {
+			this.language = language;
+			return this;
+		}
+
+
+		public Builder withCategory(String category) {
+			this.category = category;
+			return this;
+		}
+
+
+		public Builder withLocality(String locality) {
+			this.locality = locality;
+			return this;
+		}
+
+
+		public Builder withCrawledSinceDate(String crawledSinceDate) {
+			this.crawledSinceDate = crawledSinceDate;
+			return this;
+		}
+
+
+		public Builder withCrawledUntilDate(String crawledUntilDate) {
+			this.crawledUntilDate = crawledUntilDate;
+			return this;
+		}
+
+
+		public Builder withPublishedSinceDate(String publishedSinceDate) {
+			this.publishedSinceDate = publishedSinceDate;
+			return this;
+		}
+
+
+		public Builder withPublishedUntilDate(String publishedUntilDate) {
+			this.publishedUntilDate = publishedUntilDate;
+			return this;
+		}
+
+
+		public Builder withSourceLocality(SourceLocality sourceLocality) {
+			this.sourceLocality = sourceLocality;
+			return this;
+		}
+
+
+		public Builder withSourceLocalities(Set<SourceLocality> sourceLocalities) {
+			this.sourceLocalities = sourceLocalities;
+			return this;
+		}
+
+
+		public Builder withUniversalSinceDate(String universalSinceDate) {
+			this.universalSinceDate = universalSinceDate;
+			return this;
+		}
+
+
+		public Builder withUniversalUntilDate(String universalUntilDate) {
+			this.universalUntilDate = universalUntilDate;
+			return this;
+		}
+
+
+		public NewsQueryFilter build() {
+			return new NewsQueryFilter(this);
+		}
 	}
 
 }

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Parent class that stores generic data.
- * 
+ *
  */
 public abstract class DataInfo {
 
@@ -29,64 +29,66 @@ public abstract class DataInfo {
 	@SerializedName("source_locality")
 	private Collection<SourceLocalityInfo> sourceLocalities;
 
+	private Collection<String> terms;
+
 
 	/**
 	 * Get the crawled date.
-	 * 
+	 *
 	 * @return the crawled date
 	 */
 	public String getCrawledDate() {
-		return this.crawledDate;
+		return crawledDate;
 	}
 
 
 	/**
 	 * Get the identification.
-	 * 
+	 *
 	 * @return the identification
 	 */
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
 
 	/**
 	 * Get the language.
-	 * 
+	 *
 	 * @return the language
 	 */
 	public String getLanguage() {
-		return this.language;
+		return language;
 	}
 
 
 	/**
 	 * Get the published date.
-	 * 
+	 *
 	 * @return the published date
 	 */
 	public String getPublishedDate() {
-		return this.publishedDate;
+		return publishedDate;
 	}
 
 
 	/**
 	 * Get the source name.
-	 * 
+	 *
 	 * @return the source name
 	 */
 	public String getSource() {
-		return this.source;
+		return source;
 	}
 
 
 	/**
 	 * Get the source identification.
-	 * 
+	 *
 	 * @return the source identification
 	 */
 	public Integer getSourceId() {
-		return this.sourceId;
+		return sourceId;
 	}
 
 
@@ -94,13 +96,21 @@ public abstract class DataInfo {
 	 * @return the source localities
 	 */
 	public Collection<SourceLocalityInfo> getSourceLocalities() {
-		return this.sourceLocalities;
+		return sourceLocalities;
+	}
+
+
+	/**
+	 * @return the matched terms
+	 */
+	public Collection<String> getTerms() {
+		return terms;
 	}
 
 
 	/**
 	 * Set the crawled date.
-	 * 
+	 *
 	 * @param crawledDate the crawled date
 	 */
 	public void setCrawledDate(final String crawledDate) {
@@ -110,7 +120,7 @@ public abstract class DataInfo {
 
 	/**
 	 * Set the identification.
-	 * 
+	 *
 	 * @param id the identification
 	 */
 	public void setId(final Long id) {
@@ -120,7 +130,7 @@ public abstract class DataInfo {
 
 	/**
 	 * Set the language.
-	 * 
+	 *
 	 * @param language the language
 	 */
 	public void setLanguage(final String language) {
@@ -130,7 +140,7 @@ public abstract class DataInfo {
 
 	/**
 	 * Set the published date.
-	 * 
+	 *
 	 * @param publishedDate the published date
 	 */
 	public void setPublishedDate(final String publishedDate) {
@@ -140,7 +150,7 @@ public abstract class DataInfo {
 
 	/**
 	 * Set the source name.
-	 * 
+	 *
 	 * @param source the source name
 	 */
 	public void setSource(final String source) {
@@ -150,7 +160,7 @@ public abstract class DataInfo {
 
 	/**
 	 * Set the source identification.
-	 * 
+	 *
 	 * @param sourceId the source identification
 	 */
 	public void setSourceId(final Integer sourceId) {
@@ -166,11 +176,19 @@ public abstract class DataInfo {
 	}
 
 
+	/**
+	 * @param terms the matched terms
+	 */
+	public void setTerms(Collection<String> terms) {
+		this.terms = terms;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -187,11 +205,11 @@ public abstract class DataInfo {
 			return false;
 		}
 		final DataInfo other = (DataInfo) obj;
-		if (this.id == null) {
+		if (id == null) {
 			if (other.id != null) {
 				return false;
 			}
-		} else if (!this.id.equals(other.id)) {
+		} else if (!id.equals(other.id)) {
 			return false;
 		}
 		return true;

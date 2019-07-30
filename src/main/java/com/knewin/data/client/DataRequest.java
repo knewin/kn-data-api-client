@@ -31,7 +31,7 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 	/**
 	 * Request content from web service.
 	 *
-	 * @param requestInfo a {@link MediaDataRequest} instance
+	 * @param request a {@link MediaDataRequest} instance
 	 * @param url the web service URL
 	 * @param httpClient a {@link CloseableHttpClient} instance
 	 *
@@ -40,16 +40,16 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 	 * @throws DataRequestException error when requesting data from web service
 	 * @throws ParseException if json is not a valid representation for an object of type
 	 */
-	public DataResponseInfo<D> request(final R requestInfo, final String url, final CloseableHttpClient httpClient)
+	public DataResponseInfo<D> request(final R request, final String url, final CloseableHttpClient httpClient)
 		throws DataRequestException, ParseException {
-		return this.buildResponse(super.post(this.jsonBuilder.toJson(requestInfo), url, httpClient));
+		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url, httpClient));
 	}
 
 
 	/**
 	 * Request content from web service.
 	 *
-	 * @param requestInfo a {@link MediaDataRequest} instance
+	 * @param request a {@link MediaDataRequest} instance
 	 * @param url the web service URL
 	 *
 	 * @return a {@link DataResponseInfo} instance
@@ -57,8 +57,8 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 	 * @throws DataRequestException error when requesting data from web service
 	 * @throws ParseException if json is not a valid representation for an object of type
 	 */
-	public DataResponseInfo<D> request(final R requestInfo, final String url) throws DataRequestException, ParseException {
-		return this.buildResponse(super.post(this.jsonBuilder.toJson(requestInfo), url));
+	public DataResponseInfo<D> request(final R request, final String url) throws DataRequestException, ParseException {
+		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url));
 	}
 
 

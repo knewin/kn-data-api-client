@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Class that stores news data.
- * 
+ *
  * @since 1.0.0
- * 
+ *
  */
 public class NewsDataInfo extends OnlineDataInfo {
 
@@ -25,19 +25,19 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	/**
 	 * Adds a similar doc to the list of similar docs.
-	 * 
+	 *
 	 * @param newDoc the similar doc.
 	 */
 	public void addSimilar(final NewsDataInfo newDoc) {
-		if (this.similar == null) {
-			this.similar = new ArrayList<>();
+		if (similar == null) {
+			similar = new ArrayList<>();
 		}
-		this.similar.add(newDoc);
+		similar.add(newDoc);
 	}
 
 
 	public String getContent() {
-		return this.content;
+		return content;
 	}
 
 
@@ -47,7 +47,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public Collection<NewsDataInfo> getSimilar() {
-		return this.similar;
+		return similar;
 	}
 
 
@@ -57,7 +57,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public Collection<ImageNewsDataInfo> getImageHits() {
-		return this.imageHits;
+		return imageHits;
 	}
 
 
@@ -67,7 +67,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public String getPage() {
-		return this.page;
+		return page;
 	}
 
 
@@ -78,14 +78,13 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataInfo [content=" + this.content + ", similar=" + this.similar + ", imageHits=" + this.imageHits
-			+ ", page=" + this.page + ", getOriginalUrl()=" + this.getOriginalUrl() + ", getUrl()=" + this.getUrl()
-			+ ", getAuthor()=" + this.getAuthor() + ", getTitle()=" + this.getTitle() + ", getSubtitle()="
-			+ this.getSubtitle() + ", getCategory()=" + this.getCategory() + ", getHat()=" + this.getHat()
-			+ ", getLocality()=" + this.getLocality() + ", getDomain()=" + this.getDomain() + ", getCrawledDate()="
-			+ this.getCrawledDate() + ", getId()=" + this.getId() + ", getLanguage()=" + this.getLanguage()
-			+ ", getPublishedDate()=" + this.getPublishedDate() + ", getSource()=" + this.getSource() + ", getSourceId()="
-			+ this.getSourceId() + ", getSourceLocalities()=" + this.getSourceLocalities() + "]";
+		return "NewsDataInfo [content=" + content + ", similar=" + similar + ", imageHits=" + imageHits + ", page=" + page
+			+ ", getOriginalUrl()=" + getOriginalUrl() + ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor()
+			+ ", getTitle()=" + getTitle() + ", getSubtitle()=" + getSubtitle() + ", getCategory()=" + getCategory()
+			+ ", getHat()=" + getHat() + ", getLocality()=" + getLocality() + ", getDomain()=" + getDomain()
+			+ ", getCrawledDate()=" + getCrawledDate() + ", getId()=" + getId() + ", getLanguage()=" + getLanguage()
+			+ ", getPublishedDate()=" + getPublishedDate() + ", getSource()=" + getSource() + ", getSourceId()="
+			+ getSourceId() + ", getSourceLocalities()=" + getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
 	}
 
 }

@@ -28,7 +28,7 @@ public class PageClient extends RestRequest {
 
 
 	public PagesResponse requestPages(PagesRequest request) throws IOException {
-		return this.jsonBuilder.fromJson(post(this.jsonBuilder.toJson(request), this.url), PagesResponse.class);
+		return jsonBuilder.fromJson(post(jsonBuilder.toJson(request), url), PagesResponse.class);
 	}
 
 
@@ -38,7 +38,7 @@ public class PageClient extends RestRequest {
 	 * @throws IOException if an I/O exception occurs
 	 */
 	public String requestPage(PageRequest request) throws IOException {
-		final HttpURLConnection conn = (HttpURLConnection) new URL(this.url).openConnection();
+		final HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.setConnectTimeout((int) Duration.ofSeconds(30).toMillis());
 		conn.setReadTimeout((int) Duration.ofSeconds(30).toMillis());
 		conn.setDoOutput(true);
@@ -47,7 +47,7 @@ public class PageClient extends RestRequest {
 		conn.setRequestProperty("Content-Type", "application/json");
 
 		try (DataOutputStream out = new DataOutputStream(conn.getOutputStream())) {
-			out.writeBytes(this.jsonBuilder.toJson(request));
+			out.writeBytes(jsonBuilder.toJson(request));
 		}
 
 		final int status = conn.getResponseCode();
@@ -56,7 +56,7 @@ public class PageClient extends RestRequest {
 			final InputStream in = conn.getErrorStream();
 			if (in != null) {
 				try (BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
-					body = br.lines().collect(Collectors.joining(System.getProperty("line.separator")));
+					body = br.lines().collect(Collectors.joining(System.lineSeparator()));
 				}
 			}
 			throw new IOException(conn.getResponseMessage() + ":" + body);
@@ -68,7 +68,7 @@ public class PageClient extends RestRequest {
 		}
 
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-			return br.lines().collect(Collectors.joining(System.getProperty("line.separator")));
+			return br.lines().collect(Collectors.joining(System.lineSeparator()));
 		}
 	}
 }

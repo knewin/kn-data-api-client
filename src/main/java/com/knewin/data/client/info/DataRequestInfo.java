@@ -1,22 +1,14 @@
 package com.knewin.data.client.info;
 
 /**
- * Class that stores query data to request info from web service.
+ * Interface used to facilitate query objects definition.
  *
  * @since 1.5.0
  */
-public abstract class DataRequestInfo {
+public interface DataRequestInfo {
 
-	private int offset;
-
-
-	public int getOffset() {
-		return this.offset;
-	}
+	int getOffset();
 
 
-	public void setOffset(final int offset) {
-		this.offset = offset;
-	}
-
+	void setOffset(int offset);
 }

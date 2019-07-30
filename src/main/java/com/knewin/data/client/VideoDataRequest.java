@@ -14,7 +14,9 @@ import com.knewin.data.client.info.VideoDataInfo;
  *
  * @since 1.0.0
  *
+ * @deprecated Uses {@link VideoClient}. Will be removed in the next major release.
  */
+@Deprecated
 public class VideoDataRequest extends DataRequest {
 
 	private final Type responseTypeClass = new TypeToken<DataResponseInfo<VideoDataInfo>>() {
@@ -56,7 +58,7 @@ public class VideoDataRequest extends DataRequest {
 	private DataResponseInfo<VideoDataInfo> buildResponse(final String json) throws ParseException {
 		try {
 			return super.jsonBuilder.fromJson(json, responseTypeClass);
-		} catch (JsonParseException e) {
+		} catch (final JsonParseException e) {
 			throw new ParseException(e, json);
 		}
 	}

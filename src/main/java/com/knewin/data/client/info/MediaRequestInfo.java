@@ -9,79 +9,97 @@ import java.util.Set;
  *
  * @since 1.5.0
  */
-public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends DataRequestInfo {
+public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements DataRequestInfo {
 
-	private String key;
+	protected String key;
 
-	private String query;
+	protected String query;
 
-	private F filter;
+	protected int offset;
 
-	private String gmt;
+	protected F filter;
 
-	private RequestSort sort;
+	protected String gmt;
 
-	private Set<Long> ids;
+	protected RequestSort sort;
 
-	private Boolean showTimes;
+	protected Set<Long> ids;
+
+	protected Boolean showTimes;
+
+	protected Boolean matchedTerms;
+
+	protected String matchedTermsQuery;
 
 
 	public String getKey() {
-		return this.key;
+		return key;
 	}
 
 
-	public void setKey(final String key) {
+	public void setKey(String key) {
 		this.key = key;
 	}
 
 
 	public String getQuery() {
-		return this.query;
+		return query;
 	}
 
 
-	public void setQuery(final String query) {
+	public void setQuery(String query) {
 		this.query = query;
 	}
 
 
-	public F getFilter() {
-		return this.filter;
+	@Override
+	public int getOffset() {
+		return offset;
 	}
 
 
-	public void setFilter(final F filter) {
+	@Override
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+
+	public F getFilter() {
+		return filter;
+	}
+
+
+	public void setFilter(F filter) {
 		this.filter = filter;
 	}
 
 
 	public String getGmt() {
-		return this.gmt;
+		return gmt;
 	}
 
 
-	public void setGmt(final String gmt) {
+	public void setGmt(String gmt) {
 		this.gmt = gmt;
 	}
 
 
 	public RequestSort getSort() {
-		return this.sort;
+		return sort;
 	}
 
 
-	public void setSort(final RequestSort sort) {
+	public void setSort(RequestSort sort) {
 		this.sort = sort;
 	}
 
 
 	public Set<Long> getIds() {
-		return this.ids;
+		return ids;
 	}
 
 
-	public void setIds(final Set<Long> ids) {
+	public void setIds(Set<Long> ids) {
 		this.ids = ids;
 	}
 
@@ -91,15 +109,28 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> extends Dat
 	}
 
 
-	public void setShowTimes(final Boolean showTimes) {
+	public void setShowTimes(Boolean showTimes) {
 		this.showTimes = showTimes;
 	}
 
 
-	@Override
-	public String toString() {
-		return "MediaRequestInfo [key=" + this.key + ", query=" + this.query + ", filter=" + this.filter + ", gmt=" + this.gmt
-			+ ", sort=" + this.sort + ", ids=" + this.ids + ", getOffset()=" + getOffset() + "]";
+	public Boolean getMatchedTerms() {
+		return matchedTerms;
+	}
+
+
+	public void setMatchedTerms(Boolean matchedTerms) {
+		this.matchedTerms = matchedTerms;
+	}
+
+
+	public String getMatchedTermsQuery() {
+		return matchedTermsQuery;
+	}
+
+
+	public void setMatchedTermsQuery(String matchedTermsQuery) {
+		this.matchedTermsQuery = matchedTermsQuery;
 	}
 
 }
