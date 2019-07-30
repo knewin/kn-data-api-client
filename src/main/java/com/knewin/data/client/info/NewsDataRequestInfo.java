@@ -37,10 +37,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	private Boolean matchedTerms;
 
-	private String matchedTermsQuery;
 
-
-	private NewsDataRequestInfo(Builder builder) {
+	private NewsDataRequestInfo(final Builder builder) {
 		key = builder.key;
 		query = builder.query;
 		offset = builder.offset;
@@ -53,7 +51,6 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		sort = builder.sort;
 		defaultOperator = builder.defaultOperator;
 		matchedTerms = builder.matchedTerms;
-		matchedTermsQuery = builder.matchedTermsQuery;
 	}
 
 
@@ -66,7 +63,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setKey(String key) {
+	public void setKey(final String key) {
 		this.key = key;
 	}
 
@@ -76,7 +73,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setQuery(String query) {
+	public void setQuery(final String query) {
 		this.query = query;
 	}
 
@@ -88,7 +85,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 
 	@Override
-	public void setOffset(int offset) {
+	public void setOffset(final int offset) {
 		this.offset = offset;
 	}
 
@@ -98,7 +95,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setFilter(NewsQueryFilter filter) {
+	public void setFilter(final NewsQueryFilter filter) {
 		this.filter = filter;
 	}
 
@@ -108,7 +105,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setNewsIdList(Set<Long> newsIdList) {
+	public void setNewsIdList(final Set<Long> newsIdList) {
 		this.newsIdList = newsIdList;
 	}
 
@@ -118,7 +115,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setFields(Set<String> fields) {
+	public void setFields(final Set<String> fields) {
 		this.fields = fields;
 	}
 
@@ -128,7 +125,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setGmt(String gmt) {
+	public void setGmt(final String gmt) {
 		this.gmt = gmt;
 	}
 
@@ -138,7 +135,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setGroupSimilar(boolean groupSimilar) {
+	public void setGroupSimilar(final boolean groupSimilar) {
 		this.groupSimilar = groupSimilar;
 	}
 
@@ -148,7 +145,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setShowOriginalUrl(Boolean showOriginalUrl) {
+	public void setShowOriginalUrl(final Boolean showOriginalUrl) {
 		this.showOriginalUrl = showOriginalUrl;
 	}
 
@@ -158,7 +155,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setSort(NewsQuerySort sort) {
+	public void setSort(final NewsQuerySort sort) {
 		this.sort = sort;
 	}
 
@@ -168,7 +165,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setDefaultOperator(String defaultOperator) {
+	public void setDefaultOperator(final String defaultOperator) {
 		this.defaultOperator = defaultOperator;
 	}
 
@@ -178,18 +175,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public void setMatchedTerms(Boolean matchedTerms) {
+	public void setMatchedTerms(final Boolean matchedTerms) {
 		this.matchedTerms = matchedTerms;
-	}
-
-
-	public String getMatchedTermsQuery() {
-		return matchedTermsQuery;
-	}
-
-
-	public void setMatchedTermsQuery(String matchedTermsQuery) {
-		this.matchedTermsQuery = matchedTermsQuery;
 	}
 
 
@@ -198,7 +185,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter
 			+ ", newsIdList=" + newsIdList + ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar
 			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator
-			+ ", matchedTerms=" + matchedTerms + ", matchedTermsQuery=" + matchedTermsQuery + "]";
+			+ ", matchedTerms=" + matchedTerms + "]";
 	}
 
 
@@ -232,87 +219,79 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 		private Boolean matchedTerms;
 
-		private String matchedTermsQuery;
-
 
 		private Builder() {
 		}
 
 
-		public Builder withKey(String key) {
+		public Builder withKey(final String key) {
 			this.key = key;
 			return this;
 		}
 
 
-		public Builder withQuery(String query) {
+		public Builder withQuery(final String query) {
 			this.query = query;
 			return this;
 		}
 
 
-		public Builder withOffset(int offset) {
+		public Builder withOffset(final int offset) {
 			this.offset = offset;
 			return this;
 		}
 
 
-		public Builder withFilter(NewsQueryFilter filter) {
+		public Builder withFilter(final NewsQueryFilter filter) {
 			this.filter = filter;
 			return this;
 		}
 
 
-		public Builder withNewsIdList(Set<Long> newsIdList) {
+		public Builder withNewsIdList(final Set<Long> newsIdList) {
 			this.newsIdList = newsIdList;
 			return this;
 		}
 
 
-		public Builder withFields(Set<String> fields) {
+		public Builder withFields(final Set<String> fields) {
 			this.fields = fields;
 			return this;
 		}
 
 
-		public Builder withGmt(String gmt) {
+		public Builder withGmt(final String gmt) {
 			this.gmt = gmt;
 			return this;
 		}
 
 
-		public Builder withGroupSimilar(boolean groupSimilar) {
+		public Builder withGroupSimilar(final boolean groupSimilar) {
 			this.groupSimilar = groupSimilar;
 			return this;
 		}
 
 
-		public Builder withShowOriginalUrl(Boolean showOriginalUrl) {
+		public Builder withShowOriginalUrl(final Boolean showOriginalUrl) {
 			this.showOriginalUrl = showOriginalUrl;
 			return this;
 		}
 
 
-		public Builder withSort(NewsQuerySort sort) {
+		public Builder withSort(final NewsQuerySort sort) {
 			this.sort = sort;
 			return this;
 		}
 
 
-		public Builder withDefaultOperator(String defaultOperator) {
+		public Builder withDefaultOperator(final String defaultOperator) {
 			this.defaultOperator = defaultOperator;
 			return this;
 		}
 
 
-		public Builder withMatchedTerms(Boolean matchedTerms) {
+		public Builder withMatchedTerms(final Boolean matchedTerms) {
 			this.matchedTerms = matchedTerms;
-			return this;
-		}
-
-
-		public Builder withMatchedTermsQuery(String matchedTermsQuery) {
-			this.matchedTermsQuery = matchedTermsQuery;
 			return this;
 		}
 

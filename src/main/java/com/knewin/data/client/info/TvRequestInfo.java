@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 
-	private TvRequestInfo(Builder builder) {
+	private TvRequestInfo(final Builder builder) {
 		key = builder.key;
 		query = builder.query;
 		offset = builder.offset;
@@ -19,7 +19,6 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 		ids = builder.ids;
 		showTimes = builder.showTimes;
 		matchedTerms = builder.matchedTerms;
-		matchedTermsQuery = builder.matchedTermsQuery;
 	}
 
 
@@ -29,10 +28,8 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 
 	@Override
 	public String toString() {
-		return "TvRequestInfo [getKey()=" + getKey() + ", getQuery()=" + getQuery() + ", getOffset()=" + getOffset()
-			+ ", getFilter()=" + getFilter() + ", getGmt()=" + getGmt() + ", getSort()=" + getSort() + ", getIds()="
-			+ getIds() + ", getShowTimes()=" + getShowTimes() + ", getMatchedTerms()=" + getMatchedTerms()
-			+ ", getMatchedTermsQuery()=" + getMatchedTermsQuery() + "]";
+		return "TvRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter + ", gmt=" + gmt
+			+ ", sort=" + sort + ", ids=" + ids + ", showTimes=" + showTimes + ", matchedTerms=" + matchedTerms + "]";
 	}
 
 
@@ -60,69 +57,61 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 
 		private Boolean matchedTerms;
 
-		private String matchedTermsQuery;
-
 
 		private Builder() {
 		}
 
 
-		public Builder withKey(String key) {
+		public Builder withKey(final String key) {
 			this.key = key;
 			return this;
 		}
 
 
-		public Builder withQuery(String query) {
+		public Builder withQuery(final String query) {
 			this.query = query;
 			return this;
 		}
 
 
-		public Builder withOffset(int offset) {
+		public Builder withOffset(final int offset) {
 			this.offset = offset;
 			return this;
 		}
 
 
-		public Builder withFilter(TvRequestFilter filter) {
+		public Builder withFilter(final TvRequestFilter filter) {
 			this.filter = filter;
 			return this;
 		}
 
 
-		public Builder withGmt(String gmt) {
+		public Builder withGmt(final String gmt) {
 			this.gmt = gmt;
 			return this;
 		}
 
 
-		public Builder withSort(RequestSort sort) {
+		public Builder withSort(final RequestSort sort) {
 			this.sort = sort;
 			return this;
 		}
 
 
-		public Builder withIds(Set<Long> ids) {
+		public Builder withIds(final Set<Long> ids) {
 			this.ids = ids;
 			return this;
 		}
 
 
-		public Builder withShowTimes(Boolean showTimes) {
+		public Builder withShowTimes(final Boolean showTimes) {
 			this.showTimes = showTimes;
 			return this;
 		}
 
 
-		public Builder withMatchedTerms(Boolean matchedTerms) {
+		public Builder withMatchedTerms(final Boolean matchedTerms) {
 			this.matchedTerms = matchedTerms;
-			return this;
-		}
-
-
-		public Builder withMatchedTermsQuery(String matchedTermsQuery) {
-			this.matchedTermsQuery = matchedTermsQuery;
 			return this;
 		}
 

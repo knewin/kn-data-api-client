@@ -24,10 +24,8 @@ public class VideoRequest implements DataRequestInfo {
 
 	private Boolean matchedTerms;
 
-	private String matchedTermsQuery;
 
-
-	private VideoRequest(Builder builder) {
+	private VideoRequest(final Builder builder) {
 		key = builder.key;
 		query = builder.query;
 		offset = builder.offset;
@@ -38,7 +36,6 @@ public class VideoRequest implements DataRequestInfo {
 		gmt = builder.gmt;
 		defaultOperator = builder.defaultOperator;
 		matchedTerms = builder.matchedTerms;
-		matchedTermsQuery = builder.matchedTermsQuery;
 	}
 
 
@@ -51,7 +48,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setKey(String key) {
+	public void setKey(final String key) {
 		this.key = key;
 	}
 
@@ -61,7 +58,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setQuery(String query) {
+	public void setQuery(final String query) {
 		this.query = query;
 	}
 
@@ -73,7 +70,7 @@ public class VideoRequest implements DataRequestInfo {
 
 
 	@Override
-	public void setOffset(int offset) {
+	public void setOffset(final int offset) {
 		this.offset = offset;
 	}
 
@@ -83,7 +80,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setFilter(VideoRequestFilter filter) {
+	public void setFilter(final VideoRequestFilter filter) {
 		this.filter = filter;
 	}
 
@@ -93,7 +90,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setSort(RequestSort sort) {
+	public void setSort(final RequestSort sort) {
 		this.sort = sort;
 	}
 
@@ -103,7 +100,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setIds(Set<Long> ids) {
+	public void setIds(final Set<Long> ids) {
 		this.ids = ids;
 	}
 
@@ -113,7 +110,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setFields(Set<String> fields) {
+	public void setFields(final Set<String> fields) {
 		this.fields = fields;
 	}
 
@@ -123,7 +120,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setGmt(String gmt) {
+	public void setGmt(final String gmt) {
 		this.gmt = gmt;
 	}
 
@@ -133,7 +130,7 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setDefaultOperator(String defaultOperator) {
+	public void setDefaultOperator(final String defaultOperator) {
 		this.defaultOperator = defaultOperator;
 	}
 
@@ -143,18 +140,8 @@ public class VideoRequest implements DataRequestInfo {
 	}
 
 
-	public void setMatchedTerms(Boolean matchedTerms) {
+	public void setMatchedTerms(final Boolean matchedTerms) {
 		this.matchedTerms = matchedTerms;
-	}
-
-
-	public String getMatchedTermsQuery() {
-		return matchedTermsQuery;
-	}
-
-
-	public void setMatchedTermsQuery(String matchedTermsQuery) {
-		this.matchedTermsQuery = matchedTermsQuery;
 	}
 
 
@@ -162,7 +149,7 @@ public class VideoRequest implements DataRequestInfo {
 	public String toString() {
 		return "VideoRequest [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter + ", sort=" + sort
 			+ ", ids=" + ids + ", fields=" + fields + ", gmt=" + gmt + ", defaultOperator=" + defaultOperator
-			+ ", matchedTerms=" + matchedTerms + ", matchedTermsQuery=" + matchedTermsQuery + "]";
+			+ ", matchedTerms=" + matchedTerms + "]";
 	}
 
 
@@ -192,75 +179,67 @@ public class VideoRequest implements DataRequestInfo {
 
 		private Boolean matchedTerms;
 
-		private String matchedTermsQuery;
-
 
 		private Builder() {
 		}
 
 
-		public Builder withKey(String key) {
+		public Builder withKey(final String key) {
 			this.key = key;
 			return this;
 		}
 
 
-		public Builder withQuery(String query) {
+		public Builder withQuery(final String query) {
 			this.query = query;
 			return this;
 		}
 
 
-		public Builder withOffset(int offset) {
+		public Builder withOffset(final int offset) {
 			this.offset = offset;
 			return this;
 		}
 
 
-		public Builder withFilter(VideoRequestFilter filter) {
+		public Builder withFilter(final VideoRequestFilter filter) {
 			this.filter = filter;
 			return this;
 		}
 
 
-		public Builder withSort(RequestSort sort) {
+		public Builder withSort(final RequestSort sort) {
 			this.sort = sort;
 			return this;
 		}
 
 
-		public Builder withIds(Set<Long> ids) {
+		public Builder withIds(final Set<Long> ids) {
 			this.ids = ids;
 			return this;
 		}
 
 
-		public Builder withFields(Set<String> fields) {
+		public Builder withFields(final Set<String> fields) {
 			this.fields = fields;
 			return this;
 		}
 
 
-		public Builder withGmt(String gmt) {
+		public Builder withGmt(final String gmt) {
 			this.gmt = gmt;
 			return this;
 		}
 
 
-		public Builder withDefaultOperator(String defaultOperator) {
+		public Builder withDefaultOperator(final String defaultOperator) {
 			this.defaultOperator = defaultOperator;
 			return this;
 		}
 
 
-		public Builder withMatchedTerms(Boolean matchedTerms) {
+		public Builder withMatchedTerms(final Boolean matchedTerms) {
 			this.matchedTerms = matchedTerms;
-			return this;
-		}
-
-
-		public Builder withMatchedTermsQuery(String matchedTermsQuery) {
-			this.matchedTermsQuery = matchedTermsQuery;
 			return this;
 		}
 

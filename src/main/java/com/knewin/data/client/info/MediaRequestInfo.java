@@ -29,15 +29,13 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 
 	protected Boolean matchedTerms;
 
-	protected String matchedTermsQuery;
-
 
 	public String getKey() {
 		return key;
 	}
 
 
-	public void setKey(String key) {
+	public void setKey(final String key) {
 		this.key = key;
 	}
 
@@ -47,7 +45,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setQuery(String query) {
+	public void setQuery(final String query) {
 		this.query = query;
 	}
 
@@ -59,7 +57,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 
 
 	@Override
-	public void setOffset(int offset) {
+	public void setOffset(final int offset) {
 		this.offset = offset;
 	}
 
@@ -69,7 +67,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setFilter(F filter) {
+	public void setFilter(final F filter) {
 		this.filter = filter;
 	}
 
@@ -79,7 +77,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setGmt(String gmt) {
+	public void setGmt(final String gmt) {
 		this.gmt = gmt;
 	}
 
@@ -89,7 +87,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setSort(RequestSort sort) {
+	public void setSort(final RequestSort sort) {
 		this.sort = sort;
 	}
 
@@ -99,7 +97,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setIds(Set<Long> ids) {
+	public void setIds(final Set<Long> ids) {
 		this.ids = ids;
 	}
 
@@ -109,7 +107,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setShowTimes(Boolean showTimes) {
+	public void setShowTimes(final Boolean showTimes) {
 		this.showTimes = showTimes;
 	}
 
@@ -119,18 +117,8 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 	}
 
 
-	public void setMatchedTerms(Boolean matchedTerms) {
+	public void setMatchedTerms(final Boolean matchedTerms) {
 		this.matchedTerms = matchedTerms;
-	}
-
-
-	public String getMatchedTermsQuery() {
-		return matchedTermsQuery;
-	}
-
-
-	public void setMatchedTermsQuery(String matchedTermsQuery) {
-		this.matchedTermsQuery = matchedTermsQuery;
 	}
 
 }
