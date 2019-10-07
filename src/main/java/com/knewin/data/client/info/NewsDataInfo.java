@@ -15,6 +15,9 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	private String content;
 
+	@SerializedName("content_length")
+	private Integer contentLength;
+
 	private Collection<NewsDataInfo> similar;
 
 	@SerializedName("image_hits")
@@ -29,15 +32,15 @@ public class NewsDataInfo extends OnlineDataInfo {
 	 * @param newDoc the similar doc.
 	 */
 	public void addSimilar(final NewsDataInfo newDoc) {
-		if (similar == null) {
-			similar = new ArrayList<>();
+		if (this.similar == null) {
+			this.similar = new ArrayList<>();
 		}
-		similar.add(newDoc);
+		this.similar.add(newDoc);
 	}
 
 
 	public String getContent() {
-		return content;
+		return this.content;
 	}
 
 
@@ -46,8 +49,18 @@ public class NewsDataInfo extends OnlineDataInfo {
 	}
 
 
+	public Integer getContentLength() {
+		return this.contentLength;
+	}
+
+
+	public void setContentLength(Integer contentLength) {
+		this.contentLength = contentLength;
+	}
+
+
 	public Collection<NewsDataInfo> getSimilar() {
-		return similar;
+		return this.similar;
 	}
 
 
@@ -57,7 +70,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public Collection<ImageNewsDataInfo> getImageHits() {
-		return imageHits;
+		return this.imageHits;
 	}
 
 
@@ -67,7 +80,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public String getPage() {
-		return page;
+		return this.page;
 	}
 
 
@@ -78,13 +91,14 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	@Override
 	public String toString() {
-		return "NewsDataInfo [content=" + content + ", similar=" + similar + ", imageHits=" + imageHits + ", page=" + page
-			+ ", getOriginalUrl()=" + getOriginalUrl() + ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor()
-			+ ", getTitle()=" + getTitle() + ", getSubtitle()=" + getSubtitle() + ", getCategory()=" + getCategory()
-			+ ", getHat()=" + getHat() + ", getLocality()=" + getLocality() + ", getDomain()=" + getDomain()
-			+ ", getCrawledDate()=" + getCrawledDate() + ", getId()=" + getId() + ", getLanguage()=" + getLanguage()
-			+ ", getPublishedDate()=" + getPublishedDate() + ", getSource()=" + getSource() + ", getSourceId()="
-			+ getSourceId() + ", getSourceLocalities()=" + getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
+		return "NewsDataInfo [content=" + this.content + ", contentLength=" + this.contentLength + ", similar=" + this.similar
+			+ ", imageHits=" + this.imageHits + ", page=" + this.page + ", getOriginalUrl()=" + getOriginalUrl()
+			+ ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor() + ", getTitle()=" + getTitle() + ", getSubtitle()="
+			+ getSubtitle() + ", getCategory()=" + getCategory() + ", getHat()=" + getHat() + ", getLocality()="
+			+ getLocality() + ", getDomain()=" + getDomain() + ", getCrawledDate()=" + getCrawledDate() + ", getId()="
+			+ getId() + ", getLanguage()=" + getLanguage() + ", getPublishedDate()=" + getPublishedDate()
+			+ ", getSource()=" + getSource() + ", getSourceId()=" + getSourceId() + ", getSourceLocalities()="
+			+ getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
 	}
 
 }
