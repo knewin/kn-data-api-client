@@ -35,7 +35,6 @@ public class NewsQueryFilter {
 	@SerializedName("untilPublished")
 	private String publishedUntilDate;
 
-	@SerializedName("source_locality")
 	private SourceLocality sourceLocality;
 
 	private transient Set<SourceLocality> sourceLocalities = new LinkedHashSet<>();
@@ -48,18 +47,18 @@ public class NewsQueryFilter {
 
 
 	private NewsQueryFilter(Builder builder) {
-		this.sourceIdList = builder.sourceIdList;
-		this.language = builder.language;
-		this.category = builder.category;
-		this.locality = builder.locality;
-		this.crawledSinceDate = builder.crawledSinceDate;
-		this.crawledUntilDate = builder.crawledUntilDate;
-		this.publishedSinceDate = builder.publishedSinceDate;
-		this.publishedUntilDate = builder.publishedUntilDate;
-		this.sourceLocality = builder.sourceLocality;
-		this.sourceLocalities = builder.sourceLocalities;
-		this.universalSinceDate = builder.universalSinceDate;
-		this.universalUntilDate = builder.universalUntilDate;
+		sourceIdList = builder.sourceIdList;
+		language = builder.language;
+		category = builder.category;
+		locality = builder.locality;
+		crawledSinceDate = builder.crawledSinceDate;
+		crawledUntilDate = builder.crawledUntilDate;
+		publishedSinceDate = builder.publishedSinceDate;
+		publishedUntilDate = builder.publishedUntilDate;
+		sourceLocality = builder.sourceLocality;
+		sourceLocalities = builder.sourceLocalities;
+		universalSinceDate = builder.universalSinceDate;
+		universalUntilDate = builder.universalUntilDate;
 	}
 
 
@@ -73,7 +72,7 @@ public class NewsQueryFilter {
 	 * @param sourceLocality a {@link SourceLocality} instance
 	 */
 	public void addSourceLocality(final SourceLocality sourceLocality) {
-		this.sourceLocalities.add(sourceLocality);
+		sourceLocalities.add(sourceLocality);
 	}
 
 
@@ -83,7 +82,7 @@ public class NewsQueryFilter {
 	 * @return the category filter
 	 */
 	public String getCategory() {
-		return this.category;
+		return category;
 	}
 
 
@@ -97,7 +96,7 @@ public class NewsQueryFilter {
 	 * @return the crawled since date
 	 */
 	public String getCrawledSinceDate() {
-		return this.crawledSinceDate;
+		return crawledSinceDate;
 	}
 
 
@@ -111,7 +110,7 @@ public class NewsQueryFilter {
 	 * @return the crawled until date
 	 */
 	public String getCrawledUntilDate() {
-		return this.crawledUntilDate;
+		return crawledUntilDate;
 	}
 
 
@@ -121,7 +120,7 @@ public class NewsQueryFilter {
 	 * @return a list of languages
 	 */
 	public Set<String> getLanguage() {
-		return this.language;
+		return language;
 	}
 
 
@@ -131,7 +130,7 @@ public class NewsQueryFilter {
 	 * @return the locality
 	 */
 	public String getLocality() {
-		return this.locality;
+		return locality;
 	}
 
 
@@ -145,7 +144,7 @@ public class NewsQueryFilter {
 	 * @return the published since date
 	 */
 	public String getPublishedSinceDate() {
-		return this.publishedSinceDate;
+		return publishedSinceDate;
 	}
 
 
@@ -159,7 +158,7 @@ public class NewsQueryFilter {
 	 * @return the until published date
 	 */
 	public String getPublishedUntilDate() {
-		return this.publishedUntilDate;
+		return publishedUntilDate;
 	}
 
 
@@ -170,7 +169,7 @@ public class NewsQueryFilter {
 	 */
 
 	public Set<Integer> getSourceIdList() {
-		return this.sourceIdList;
+		return sourceIdList;
 	}
 
 
@@ -180,7 +179,7 @@ public class NewsQueryFilter {
 	 * @return the {@link SourceLocality} instance
 	 */
 	SourceLocality getSourceLocality() {
-		return this.sourceLocality;
+		return sourceLocality;
 	}
 
 
@@ -190,7 +189,7 @@ public class NewsQueryFilter {
 	 * @return the {@link SourceLocality}'s
 	 */
 	public Set<SourceLocality> getSourceLocalities() {
-		return this.sourceLocalities;
+		return sourceLocalities;
 	}
 
 
@@ -204,7 +203,7 @@ public class NewsQueryFilter {
 	 * @return the universal since date
 	 */
 	public String getUniversalSinceDate() {
-		return this.universalSinceDate;
+		return universalSinceDate;
 	}
 
 
@@ -218,7 +217,7 @@ public class NewsQueryFilter {
 	 * @return the until universal date
 	 */
 	public String getUniversalUntilDate() {
-		return this.universalUntilDate;
+		return universalUntilDate;
 	}
 
 
@@ -358,11 +357,11 @@ public class NewsQueryFilter {
 
 	@Override
 	public String toString() {
-		return "NewsQueryFilter [sourceIdList=" + this.sourceIdList + ", language=" + this.language + ", category="
-			+ this.category + ", locality=" + this.locality + ", crawledSinceDate=" + this.crawledSinceDate
-			+ ", crawledUntilDate=" + this.crawledUntilDate + ", publishedSinceDate=" + this.publishedSinceDate
-			+ ", publishedUntilDate=" + this.publishedUntilDate + ", sourceLocality=" + this.sourceLocality
-			+ ", universalSinceDate=" + this.universalSinceDate + ", universalUntilDate=" + this.universalUntilDate + "]";
+		return "NewsQueryFilter [sourceIdList=" + sourceIdList + ", language=" + language + ", category=" + category
+			+ ", locality=" + locality + ", crawledSinceDate=" + crawledSinceDate + ", crawledUntilDate="
+			+ crawledUntilDate + ", publishedSinceDate=" + publishedSinceDate + ", publishedUntilDate="
+			+ publishedUntilDate + ", sourceLocality=" + sourceLocality + ", universalSinceDate=" + universalSinceDate
+			+ ", universalUntilDate=" + universalUntilDate + "]";
 	}
 
 
