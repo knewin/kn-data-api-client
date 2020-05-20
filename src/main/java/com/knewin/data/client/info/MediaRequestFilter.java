@@ -4,7 +4,7 @@ import java.util.Set;
 
 /**
  * Class that defines filters to be used in conjunction with the query to search for media.
- * 
+ *
  * @since 1.5.0
  */
 public abstract class MediaRequestFilter {
@@ -21,9 +21,10 @@ public abstract class MediaRequestFilter {
 
 	private String untilCrawled;
 
+	private Boolean edited;
 
 	public Set<Integer> getSourceIds() {
-		return this.sourceIds;
+		return sourceIds;
 	}
 
 
@@ -33,7 +34,7 @@ public abstract class MediaRequestFilter {
 
 
 	public Set<String> getLanguages() {
-		return this.languages;
+		return languages;
 	}
 
 
@@ -43,7 +44,7 @@ public abstract class MediaRequestFilter {
 
 
 	public String getSinceBroadcast() {
-		return this.sinceBroadcast;
+		return sinceBroadcast;
 	}
 
 
@@ -53,7 +54,7 @@ public abstract class MediaRequestFilter {
 
 
 	public String getUntilBroadcast() {
-		return this.untilBroadcast;
+		return untilBroadcast;
 	}
 
 
@@ -63,7 +64,7 @@ public abstract class MediaRequestFilter {
 
 
 	public String getSinceCrawled() {
-		return this.sinceCrawled;
+		return sinceCrawled;
 	}
 
 
@@ -73,7 +74,7 @@ public abstract class MediaRequestFilter {
 
 
 	public String getUntilCrawled() {
-		return this.untilCrawled;
+		return untilCrawled;
 	}
 
 
@@ -82,11 +83,21 @@ public abstract class MediaRequestFilter {
 	}
 
 
+	public Boolean getEdited() {
+		return edited;
+	}
+
+
+	public void setEdited(final Boolean edited) {
+		this.edited = edited;
+	}
+
+
 	@Override
 	public String toString() {
-		return "MediaRequestFilter [sourceIds=" + this.sourceIds + ", languages=" + this.languages + ", sinceBroadcast="
-			+ this.sinceBroadcast + ", untilBroadcast=" + this.untilBroadcast + ", sinceCrawled=" + this.sinceCrawled
-			+ ", untilCrawled=" + this.untilCrawled + "]";
+		return "MediaRequestFilter [sourceIds=" + sourceIds + ", languages=" + languages + ", sinceBroadcast=" + sinceBroadcast
+			+ ", untilBroadcast=" + untilBroadcast + ", sinceCrawled=" + sinceCrawled + ", untilCrawled=" + untilCrawled
+			+ ", edited=" + edited + "]";
 	}
 
 }

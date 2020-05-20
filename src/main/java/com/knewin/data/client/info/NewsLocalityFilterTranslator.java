@@ -35,9 +35,9 @@ public final class NewsLocalityFilterTranslator {
 			return;
 		}
 		final Set<SourceLocality> sourceLocalities = filter.getSourceLocalities();
-		if (sourceLocalities.size() == 1) {
+		if (sourceLocalities != null && sourceLocalities.size() == 1) {
 			filter.setSourceLocality(sourceLocalities.iterator().next());
-		} else if (sourceLocalities.size() > 1) {
+		} else if (sourceLocalities != null && sourceLocalities.size() > 1) {
 			this.newsDataRequestInfo.setQuery(LocalityFilterBuilder.create().withQuery(this.newsDataRequestInfo.getQuery())
 				.withLocalities(sourceLocalities).build());
 		}

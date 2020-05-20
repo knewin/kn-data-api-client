@@ -20,12 +20,15 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	private Integer duration;
 
+	private String editedTime;
+
+	private String origin;
+
 	private String title;
 
 	private String content;
 
 	private List<Part> times;
-
 
 	public String getMediaUrl() {
 		return mediaUrl;
@@ -67,12 +70,32 @@ public abstract class MediaDataInfo extends DataInfo {
 	}
 
 
+	public String getEditedTime() {
+		return editedTime;
+	}
+
+
+	public void setEditedTime(final String editedTime) {
+		this.editedTime = editedTime;
+	}
+
+
+	public String getOrigin() {
+		return origin;
+	}
+
+
+	public void setOrigin(final String origin) {
+		this.origin = origin;
+	}
+
+
 	public String getTitle() {
 		return title;
 	}
 
 
-	public void setTitle(String title) {
+	public void setTitle(final String title) {
 		this.title = title;
 	}
 
@@ -94,6 +117,14 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	public void setTimes(final List<Part> times) {
 		this.times = times;
+	}
+
+
+	@Override
+	public String toString() {
+		return "[mediaUrl=" + mediaUrl + ", startTime=" + startTime + ", endTime=" + endTime + ", duration=" + duration
+			+ ", editedTime=" + editedTime + ", origin=" + origin + ", title=" + title + ", content=" + content
+			+ ", times=" + times + "]";
 	}
 
 }

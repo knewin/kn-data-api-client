@@ -27,7 +27,6 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 
 	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping().create();
 
-
 	/**
 	 * Request content from web service.
 	 *
@@ -69,7 +68,7 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 			final Type responseType = ParameterizedTypeImpl.make(DataResponseInfo.class, new Type[] {argumentType}, null);
 			return this.jsonBuilder.fromJson(json, responseType);
 		} catch (final JsonParseException e) {
-			throw new ParseException(e, json);
+			throw new ParseException(json, e, json);
 		}
 	}
 

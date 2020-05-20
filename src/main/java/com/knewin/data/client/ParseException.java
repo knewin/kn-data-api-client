@@ -11,15 +11,10 @@ public class ParseException extends RuntimeException {
 	/**
 	 * The malformed JSON string.
 	 */
-	private String json;
+	private final String json;
 
-
-	/**
-	 * @param cause the exception cause
-	 * @param json the malformed json
-	 */
-	public ParseException(Throwable cause, String json) {
-		super(cause);
+	public ParseException(final String message, final Throwable cause, final String json) {
+		super(message, cause);
 		this.json = json;
 	}
 
