@@ -45,8 +45,9 @@ public class NewsQueryFilter {
 	@SerializedName("untilUniversal")
 	private String universalUntilDate;
 
+	private Boolean edited;
 
-	private NewsQueryFilter(Builder builder) {
+	private NewsQueryFilter(final Builder builder) {
 		sourceIdList = builder.sourceIdList;
 		language = builder.language;
 		category = builder.category;
@@ -59,6 +60,7 @@ public class NewsQueryFilter {
 		sourceLocalities = builder.sourceLocalities;
 		universalSinceDate = builder.universalSinceDate;
 		universalUntilDate = builder.universalUntilDate;
+		edited = builder.edited;
 	}
 
 
@@ -221,6 +223,11 @@ public class NewsQueryFilter {
 	}
 
 
+	public Boolean getEdited() {
+		return edited;
+	}
+
+
 	/**
 	 * Set the category.
 	 *
@@ -355,13 +362,18 @@ public class NewsQueryFilter {
 	}
 
 
+	public void setEdited(final Boolean edited) {
+		this.edited = edited;
+	}
+
+
 	@Override
 	public String toString() {
 		return "NewsQueryFilter [sourceIdList=" + sourceIdList + ", language=" + language + ", category=" + category
 			+ ", locality=" + locality + ", crawledSinceDate=" + crawledSinceDate + ", crawledUntilDate="
 			+ crawledUntilDate + ", publishedSinceDate=" + publishedSinceDate + ", publishedUntilDate="
 			+ publishedUntilDate + ", sourceLocality=" + sourceLocality + ", universalSinceDate=" + universalSinceDate
-			+ ", universalUntilDate=" + universalUntilDate + "]";
+			+ ", universalUntilDate=" + universalUntilDate + ", edited=" + edited + "]";
 	}
 
 
@@ -395,79 +407,86 @@ public class NewsQueryFilter {
 
 		private String universalUntilDate;
 
+		private Boolean edited;
 
 		private Builder() {
 		}
 
 
-		public Builder withSourceIdList(Set<Integer> sourceIdList) {
+		public Builder withSourceIdList(final Set<Integer> sourceIdList) {
 			this.sourceIdList = sourceIdList;
 			return this;
 		}
 
 
-		public Builder withLanguage(Set<String> language) {
+		public Builder withLanguage(final Set<String> language) {
 			this.language = language;
 			return this;
 		}
 
 
-		public Builder withCategory(String category) {
+		public Builder withCategory(final String category) {
 			this.category = category;
 			return this;
 		}
 
 
-		public Builder withLocality(String locality) {
+		public Builder withLocality(final String locality) {
 			this.locality = locality;
 			return this;
 		}
 
 
-		public Builder withCrawledSinceDate(String crawledSinceDate) {
+		public Builder withCrawledSinceDate(final String crawledSinceDate) {
 			this.crawledSinceDate = crawledSinceDate;
 			return this;
 		}
 
 
-		public Builder withCrawledUntilDate(String crawledUntilDate) {
+		public Builder withCrawledUntilDate(final String crawledUntilDate) {
 			this.crawledUntilDate = crawledUntilDate;
 			return this;
 		}
 
 
-		public Builder withPublishedSinceDate(String publishedSinceDate) {
+		public Builder withPublishedSinceDate(final String publishedSinceDate) {
 			this.publishedSinceDate = publishedSinceDate;
 			return this;
 		}
 
 
-		public Builder withPublishedUntilDate(String publishedUntilDate) {
+		public Builder withPublishedUntilDate(final String publishedUntilDate) {
 			this.publishedUntilDate = publishedUntilDate;
 			return this;
 		}
 
 
-		public Builder withSourceLocality(SourceLocality sourceLocality) {
+		public Builder withSourceLocality(final SourceLocality sourceLocality) {
 			this.sourceLocality = sourceLocality;
 			return this;
 		}
 
 
-		public Builder withSourceLocalities(Set<SourceLocality> sourceLocalities) {
+		public Builder withSourceLocalities(final Set<SourceLocality> sourceLocalities) {
 			this.sourceLocalities = sourceLocalities;
 			return this;
 		}
 
 
-		public Builder withUniversalSinceDate(String universalSinceDate) {
+		public Builder withUniversalSinceDate(final String universalSinceDate) {
 			this.universalSinceDate = universalSinceDate;
 			return this;
 		}
 
 
-		public Builder withUniversalUntilDate(String universalUntilDate) {
+		public Builder withUniversalUntilDate(final String universalUntilDate) {
 			this.universalUntilDate = universalUntilDate;
+			return this;
+		}
+
+
+		public Builder withEdited(final Boolean edited) {
+			this.edited = edited;
 			return this;
 		}
 

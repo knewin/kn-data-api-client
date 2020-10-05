@@ -2,6 +2,7 @@ package com.knewin.data.client;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.time.OffsetDateTime;
 
 import org.apache.http.impl.client.CloseableHttpClient;
 
@@ -11,6 +12,7 @@ import com.google.gson.JsonParseException;
 import com.knewin.data.client.info.DataInfo;
 import com.knewin.data.client.info.DataRequestInfo;
 import com.knewin.data.client.info.DataResponseInfo;
+import com.knewin.data.client.utils.TypeAdapterForOffsetDateTime;
 
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
@@ -25,7 +27,8 @@ import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 @SuppressWarnings("restriction")
 public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo> extends RestRequest {
 
-	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping().create();
+	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping()
+		.registerTypeAdapter(OffsetDateTime.class, new TypeAdapterForOffsetDateTime()).create();
 
 	/**
 	 * Request content from web service.

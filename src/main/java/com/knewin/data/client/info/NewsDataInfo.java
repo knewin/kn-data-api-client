@@ -1,5 +1,6 @@
 package com.knewin.data.client.info;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -25,6 +26,9 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 	private String page;
 
+	private OffsetDateTime editedTime;
+
+	private String origin;
 
 	/**
 	 * Adds a similar doc to the list of similar docs.
@@ -32,15 +36,15 @@ public class NewsDataInfo extends OnlineDataInfo {
 	 * @param newDoc the similar doc.
 	 */
 	public void addSimilar(final NewsDataInfo newDoc) {
-		if (this.similar == null) {
-			this.similar = new ArrayList<>();
+		if (similar == null) {
+			similar = new ArrayList<>();
 		}
-		this.similar.add(newDoc);
+		similar.add(newDoc);
 	}
 
 
 	public String getContent() {
-		return this.content;
+		return content;
 	}
 
 
@@ -50,17 +54,17 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public Integer getContentLength() {
-		return this.contentLength;
+		return contentLength;
 	}
 
 
-	public void setContentLength(Integer contentLength) {
+	public void setContentLength(final Integer contentLength) {
 		this.contentLength = contentLength;
 	}
 
 
 	public Collection<NewsDataInfo> getSimilar() {
-		return this.similar;
+		return similar;
 	}
 
 
@@ -70,7 +74,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public Collection<ImageNewsDataInfo> getImageHits() {
-		return this.imageHits;
+		return imageHits;
 	}
 
 
@@ -80,7 +84,7 @@ public class NewsDataInfo extends OnlineDataInfo {
 
 
 	public String getPage() {
-		return this.page;
+		return page;
 	}
 
 
@@ -89,16 +93,36 @@ public class NewsDataInfo extends OnlineDataInfo {
 	}
 
 
+	public OffsetDateTime getEditedTime() {
+		return editedTime;
+	}
+
+
+	public void setEditedTime(final OffsetDateTime editedTime) {
+		this.editedTime = editedTime;
+	}
+
+
+	public String getOrigin() {
+		return origin;
+	}
+
+
+	public void setOrigin(final String origin) {
+		this.origin = origin;
+	}
+
+
 	@Override
 	public String toString() {
-		return "NewsDataInfo [content=" + this.content + ", contentLength=" + this.contentLength + ", similar=" + this.similar
-			+ ", imageHits=" + this.imageHits + ", page=" + this.page + ", getOriginalUrl()=" + getOriginalUrl()
-			+ ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor() + ", getTitle()=" + getTitle() + ", getSubtitle()="
-			+ getSubtitle() + ", getCategory()=" + getCategory() + ", getHat()=" + getHat() + ", getLocality()="
-			+ getLocality() + ", getDomain()=" + getDomain() + ", getCrawledDate()=" + getCrawledDate() + ", getId()="
-			+ getId() + ", getLanguage()=" + getLanguage() + ", getPublishedDate()=" + getPublishedDate()
-			+ ", getSource()=" + getSource() + ", getSourceId()=" + getSourceId() + ", getSourceLocalities()="
-			+ getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
+		return "NewsDataInfo [content=" + content + ", contentLength=" + contentLength + ", similar=" + similar
+			+ ", imageHits=" + imageHits + ", page=" + page + ", editedTime=" + editedTime + ", origin=" + origin
+			+ ", getOriginalUrl()=" + getOriginalUrl() + ", getUrl()=" + getUrl() + ", getAuthor()=" + getAuthor()
+			+ ", getTitle()=" + getTitle() + ", getSubtitle()=" + getSubtitle() + ", getCategory()=" + getCategory()
+			+ ", getHat()=" + getHat() + ", getLocality()=" + getLocality() + ", getDomain()=" + getDomain()
+			+ ", getCrawledDate()=" + getCrawledDate() + ", getId()=" + getId() + ", getLanguage()=" + getLanguage()
+			+ ", getPublishedDate()=" + getPublishedDate() + ", getSource()=" + getSource() + ", getSourceId()="
+			+ getSourceId() + ", getSourceLocalities()=" + getSourceLocalities() + ", getTerms()=" + getTerms() + "]";
 	}
 
 }
