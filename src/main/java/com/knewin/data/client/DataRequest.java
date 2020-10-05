@@ -12,7 +12,7 @@ import com.google.gson.JsonParseException;
 import com.knewin.data.client.info.DataInfo;
 import com.knewin.data.client.info.DataRequestInfo;
 import com.knewin.data.client.info.DataResponseInfo;
-import com.knewin.data.client.utils.TypeAdapterForOffsetDateTime;
+import com.knewin.data.client.utils.GsonOffsetDateAdapter;
 
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
@@ -28,7 +28,7 @@ import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo> extends RestRequest {
 
 	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping()
-		.registerTypeAdapter(OffsetDateTime.class, new TypeAdapterForOffsetDateTime()).create();
+		.registerTypeAdapter(OffsetDateTime.class, new GsonOffsetDateAdapter()).create();
 
 	/**
 	 * Request content from web service.
