@@ -45,7 +45,7 @@ public class NewsQueryFilter {
 	@SerializedName("untilUniversal")
 	private String universalUntilDate;
 
-	private Edited edited;
+	private EditedNewsFilter edited;
 
 	private NewsQueryFilter(final Builder builder) {
 		sourceIdList = builder.sourceIdList;
@@ -223,7 +223,7 @@ public class NewsQueryFilter {
 	}
 
 
-	public Edited getEdited() {
+	public EditedNewsFilter getEdited() {
 		return edited;
 	}
 
@@ -362,7 +362,7 @@ public class NewsQueryFilter {
 	}
 
 
-	public void setEdited(final Edited edited) {
+	public void setEdited(final EditedNewsFilter edited) {
 		this.edited = edited;
 	}
 
@@ -407,7 +407,7 @@ public class NewsQueryFilter {
 
 		private String universalUntilDate;
 
-		private Edited edited;
+		private EditedNewsFilter edited;
 
 		private Builder() {
 		}
@@ -485,7 +485,7 @@ public class NewsQueryFilter {
 		}
 
 
-		public Builder withEdited(final Edited edited) {
+		public Builder withEdited(final EditedNewsFilter edited) {
 			this.edited = edited;
 			return this;
 		}
