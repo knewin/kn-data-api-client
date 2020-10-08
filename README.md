@@ -71,3 +71,13 @@ Exemplo de como fazer consulta na API de Rádio
 	responseInfo.getHits().forEach(radio -> System.out.println("   - " + radio.getContent().replaceAll("\n+", " ")));
   
   
+Exemplo de como fazer consulta na API de Similaridade
+-----------------------------------------------  
+
+final SimilarNewsDataRequestInfo request = SimilarNewsDataRequestInfo.builder().withKey(session.getKey())
+				.withTitle(title).withContent(content).withOffset(offSet).withSince(format.format(publishDate))
+				.withGmt("-3").build();
+final DataResponseInfo<NewsDataInfo> response = new SimilarNewsDataRequest().request(request, url);
+
+System.out.println("Conteúdo das notícias recuperadas para esta requisição");
+	response.getHits().forEach(news -> System.out.println("   - " + news.getContent().replaceAll("\n+", " ")));  
