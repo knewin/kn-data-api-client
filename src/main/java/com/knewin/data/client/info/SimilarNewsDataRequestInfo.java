@@ -1,5 +1,9 @@
 package com.knewin.data.client.info;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class SimilarNewsDataRequestInfo implements DataRequestInfo {
 
 	private String key;
@@ -15,6 +19,8 @@ public class SimilarNewsDataRequestInfo implements DataRequestInfo {
 	private String title;
 
 	private String content;
+
+	private transient final Map<String, String> headers = new HashMap<String, String>();;
 
 	private SimilarNewsDataRequestInfo(final Builder builder) {
 		key = builder.key;
@@ -96,6 +102,17 @@ public class SimilarNewsDataRequestInfo implements DataRequestInfo {
 	@Override
 	public void setOffset(final int offset) {
 		this.offset = offset;
+	}
+
+
+	@Override
+	public Map<String, String> getHeaders() {
+		return headers == null ? Collections.emptyMap() : headers;
+	}
+
+
+	public void addHeader(final String name, final String value) {
+		headers.put(name, value);
 	}
 
 
