@@ -37,6 +37,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	private Boolean matchedTerms;
 
+	private Integer limit;
 
 	private NewsDataRequestInfo(final Builder builder) {
 		key = builder.key;
@@ -180,12 +181,22 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
+	public Integer getLimit() {
+		return limit;
+	}
+
+
+	public void setLimit(final Integer limit) {
+		this.limit = limit;
+	}
+
+
 	@Override
 	public String toString() {
 		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter
 			+ ", newsIdList=" + newsIdList + ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar
 			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator
-			+ ", matchedTerms=" + matchedTerms + "]";
+			+ ", matchedTerms=" + matchedTerms + ", limit=" + limit + "]";
 	}
 
 
@@ -218,7 +229,6 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		private String defaultOperator;
 
 		private Boolean matchedTerms;
-
 
 		private Builder() {
 		}
