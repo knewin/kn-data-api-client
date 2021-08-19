@@ -1,5 +1,8 @@
 package com.knewin.data.client.info;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import com.google.gson.annotations.SerializedName;
@@ -37,6 +40,7 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	private Boolean matchedTerms;
 
+	private transient Map<String, String> headers = new HashMap<String, String>(1);
 
 	private NewsDataRequestInfo(final Builder builder) {
 		key = builder.key;
@@ -180,6 +184,17 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
+	public void addHeader(final String name, final String value) {
+		headers.put(name, value);
+	}
+
+
+	@Override
+	public Map<String, String> getHeaders() {
+		return headers == null ? Collections.emptyMap() : headers;
+	}
+
+
 	@Override
 	public String toString() {
 		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter
@@ -218,7 +233,6 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		private String defaultOperator;
 
 		private Boolean matchedTerms;
-
 
 		private Builder() {
 		}

@@ -44,7 +44,7 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 	 */
 	public DataResponseInfo<D> request(final R request, final String url, final CloseableHttpClient httpClient)
 		throws DataRequestException, ParseException {
-		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url, httpClient));
+		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url, httpClient, request.getHeaders()));
 	}
 
 
@@ -60,7 +60,7 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 	 * @throws ParseException if json is not a valid representation for an object of type
 	 */
 	public DataResponseInfo<D> request(final R request, final String url) throws DataRequestException, ParseException {
-		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url));
+		return this.buildResponse(super.post(this.jsonBuilder.toJson(request), url, request.getHeaders()));
 	}
 
 

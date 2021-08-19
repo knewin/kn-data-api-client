@@ -3,6 +3,7 @@ package com.knewin.data.client;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
@@ -29,16 +30,18 @@ public class RestRequest {
 	 *
 	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	protected String post(final String postContent, final String url) throws DataRequestException {
+	protected String post(final String postContent, final String url, final Map<String, String> headers)
+		throws DataRequestException {
 
 		final RequestConfig requestConfig = RequestConfig.custom()
 			.setConnectionRequestTimeout((int) DEFAULT_CONNECT_TIMEOUT.toMillis())
 			.setSocketTimeout((int) DEFAULT_READ_TIMEOUT.toMillis())
-			.setConnectTimeout((int) DEFAULT_READ_TIMEOUT.toMillis()).build();
+			.setConnectTimeout((int) DEFAULT_READ_TIMEOUT.toMillis())//
+			.build();
 
 		try (final CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig)
 			.build()) {
-			return this.post(postContent, url, httpClient);
+			return this.post(postContent, url, httpClient, headers);
 		} catch (final Exception e) {
 			throw new DataRequestException(e, postContent);
 		}
@@ -51,15 +54,17 @@ public class RestRequest {
 	 * @param postContent the body content that contains the parameters request
 	 * @param url the URL
 	 * @param httpClient a {@link CloseableHttpClient} instance
+	 * @param headers
 	 *
 	 * @return the response content
 	 *
 	 * @throws DataRequestException error in case of problems to request remote content
 	 */
-	protected String post(final String postContent, final String url, final CloseableHttpClient httpClient)
-		throws DataRequestException {
+	protected String post(final String postContent, final String url, final CloseableHttpClient httpClient,
+		final Map<String, String> headers) throws DataRequestException {
 
 		final HttpPost httpPost = new HttpPost(url);
+		headers.forEach(httpPost::addHeader);
 		httpPost.setEntity(new StringEntity(postContent, StandardCharsets.UTF_8));
 
 		try (final CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {

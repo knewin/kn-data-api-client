@@ -1,5 +1,7 @@
 package com.knewin.data.client.pages;
 
+import static java.util.Collections.emptyMap;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -21,14 +23,13 @@ public class PageClient extends RestRequest {
 
 	private final String url;
 
-
-	public PageClient(String url) {
+	public PageClient(final String url) {
 		this.url = url;
 	}
 
 
-	public PagesResponse requestPages(PagesRequest request) throws IOException {
-		return jsonBuilder.fromJson(post(jsonBuilder.toJson(request), url), PagesResponse.class);
+	public PagesResponse requestPages(final PagesRequest request) throws IOException {
+		return jsonBuilder.fromJson(post(jsonBuilder.toJson(request), url, emptyMap()), PagesResponse.class);
 	}
 
 
@@ -37,7 +38,7 @@ public class PageClient extends RestRequest {
 	 * @return the page url
 	 * @throws IOException if an I/O exception occurs
 	 */
-	public String requestPage(PageRequest request) throws IOException {
+	public String requestPage(final PageRequest request) throws IOException {
 		final HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		conn.setConnectTimeout((int) Duration.ofSeconds(30).toMillis());
 		conn.setReadTimeout((int) Duration.ofSeconds(30).toMillis());
