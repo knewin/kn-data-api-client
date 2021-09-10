@@ -1,5 +1,7 @@
 package com.knewin.data.client.info;
 
+import java.util.Map;
+
 /**
  * Interface used to facilitate query objects definition.
  *
@@ -11,4 +13,7 @@ public interface DataRequestInfo {
 
 
 	void setOffset(int offset);
+
+
+	Map<String, String> getHeaders();
 }

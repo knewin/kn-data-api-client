@@ -1,5 +1,8 @@
 package com.knewin.data.client.info;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import com.google.gson.annotations.SerializedName;
@@ -17,6 +20,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	private String query;
 
 	private int offset;
+
+	private Integer limit;
 
 	private NewsQueryFilter filter;
 
@@ -37,12 +42,13 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 	private Boolean matchedTerms;
 
-	private Integer limit;
+	private transient Map<String, String> headers = new HashMap<String, String>(1);
 
 	private NewsDataRequestInfo(final Builder builder) {
 		key = builder.key;
 		query = builder.query;
 		offset = builder.offset;
+		limit = builder.limit;
 		filter = builder.filter;
 		newsIdList = builder.newsIdList;
 		fields = builder.fields;
@@ -88,6 +94,16 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	@Override
 	public void setOffset(final int offset) {
 		this.offset = offset;
+	}
+
+
+	public Integer getLimit() {
+		return limit;
+	}
+
+
+	public void setLimit(final Integer limit) {
+		this.limit = limit;
 	}
 
 
@@ -181,22 +197,23 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 	}
 
 
-	public Integer getLimit() {
-		return limit;
+	public void addHeader(final String name, final String value) {
+		headers.put(name, value);
 	}
 
 
-	public void setLimit(final Integer limit) {
-		this.limit = limit;
+	@Override
+	public Map<String, String> getHeaders() {
+		return headers == null ? Collections.emptyMap() : headers;
 	}
 
 
 	@Override
 	public String toString() {
-		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter
-			+ ", newsIdList=" + newsIdList + ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar=" + groupSimilar
-			+ ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator=" + defaultOperator
-			+ ", matchedTerms=" + matchedTerms + ", limit=" + limit + "]";
+		return "NewsDataRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", limit=" + limit + ", filter="
+			+ filter + ", newsIdList=" + newsIdList + ", fields=" + fields + ", gmt=" + gmt + ", groupSimilar="
+			+ groupSimilar + ", showOriginalUrl=" + showOriginalUrl + ", sort=" + sort + ", defaultOperator="
+			+ defaultOperator + ", matchedTerms=" + matchedTerms + "]";
 	}
 
 
@@ -211,6 +228,8 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 		private String query;
 
 		private int offset;
+
+		private Integer limit;
 
 		private NewsQueryFilter filter;
 
@@ -248,6 +267,12 @@ public class NewsDataRequestInfo implements DataRequestInfo {
 
 		public Builder withOffset(final int offset) {
 			this.offset = offset;
+			return this;
+		}
+
+
+		public Builder withLimit(final Integer limit) {
+			this.limit = limit;
 			return this;
 		}
 

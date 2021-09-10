@@ -1,5 +1,8 @@
 package com.knewin.data.client.info;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -29,6 +32,7 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 
 	protected Boolean matchedTerms;
 
+	protected transient Map<String, String> headers = new HashMap<String, String>(1);
 
 	public String getKey() {
 		return key;
@@ -121,4 +125,14 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 		this.matchedTerms = matchedTerms;
 	}
 
+
+	public void addHeader(final String name, final String value) {
+		headers.put(name, value);
+	}
+
+
+	@Override
+	public Map<String, String> getHeaders() {
+		return headers == null ? Collections.emptyMap() : headers;
+	}
 }
