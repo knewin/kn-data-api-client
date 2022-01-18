@@ -1,6 +1,5 @@
 package com.knewin.data.client;
 
-import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.time.OffsetDateTime;
 
@@ -14,8 +13,6 @@ import com.knewin.data.client.info.DataRequestInfo;
 import com.knewin.data.client.info.DataResponseInfo;
 import com.knewin.data.client.utils.GsonOffsetDateAdapter;
 
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
-
 /**
  * Parent class that implements generic methods to request content from web service.
  *
@@ -24,7 +21,6 @@ import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
  * @param <R> the {@link DataRequestInfo}
  * @param <D> the {@link DataInfo}
  */
-@SuppressWarnings("restriction")
 public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo> extends RestRequest {
 
 	protected final Gson jsonBuilder = new GsonBuilder().disableHtmlEscaping()
@@ -66,13 +62,13 @@ public abstract class DataRequest<R extends DataRequestInfo, D extends DataInfo>
 
 	private DataResponseInfo<D> buildResponse(final String json) throws ParseException {
 		try {
-			final Type argumentType = ((ParameterizedType) this.getClass().getGenericSuperclass())
-				.getActualTypeArguments()[1];
-			final Type responseType = ParameterizedTypeImpl.make(DataResponseInfo.class, new Type[] {argumentType}, null);
-			return this.jsonBuilder.fromJson(json, responseType);
+			return jsonBuilder.fromJson(json, getTypeToken());
 		} catch (final JsonParseException e) {
 			throw new ParseException(json, e, json);
 		}
 	}
+
+
+	protected abstract Type getTypeToken();
 
 }
