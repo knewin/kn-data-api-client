@@ -4,7 +4,7 @@
 	<groupId>com.knewin</groupId>
 	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>5.2.0</version>
+	<version>5.2.1</version>
 	<name>com.knewin.data.client</name>
 	<url>https://github.com/knewin/com.knewin.data.client</url>
 	
@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.12</version>
+			<version>4.5.13</version>
 			<optional>true</optional>
 		</dependency>
 	</dependencies>

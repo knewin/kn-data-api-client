@@ -1,5 +1,9 @@
 package com.knewin.data.client;
 
+import java.lang.reflect.Type;
+
+import com.google.gson.reflect.TypeToken;
+import com.knewin.data.client.info.DataResponseInfo;
 import com.knewin.data.client.info.TvDataInfo;
 import com.knewin.data.client.info.TvRequestInfo;
 
@@ -10,4 +14,9 @@ import com.knewin.data.client.info.TvRequestInfo;
  */
 public class TvDataRequest extends MediaDataRequest<TvRequestInfo, TvDataInfo> {
 
+	@Override
+	protected Type getTypeToken() {
+		return new TypeToken<DataResponseInfo<TvDataInfo>>() {
+		}.getType();
+	}
 }

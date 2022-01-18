@@ -1,7 +1,10 @@
 package com.knewin.data.client;
 
+import java.lang.reflect.Type;
+
 import org.apache.http.impl.client.CloseableHttpClient;
 
+import com.google.gson.reflect.TypeToken;
 import com.knewin.data.client.info.DataResponseInfo;
 import com.knewin.data.client.info.NewsDataInfo;
 import com.knewin.data.client.info.NewsDataRequestInfo;
@@ -28,6 +31,13 @@ public class NewsDataRequest extends DataRequest<NewsDataRequestInfo, NewsDataIn
 		final CloseableHttpClient httpClient) throws DataRequestException, ParseException {
 		NewsLocalityFilterTranslator.create().withNewsDataRequestInfo(requestInfo).translate();
 		return super.request(requestInfo, url, httpClient);
+	}
+
+
+	@Override
+	protected Type getTypeToken() {
+		return new TypeToken<DataResponseInfo<NewsDataInfo>>() {
+		}.getType();
 	}
 
 }
