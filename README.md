@@ -1,7 +1,7 @@
-com.knewin.data.client
+kn-data-api-client
 ======================
 
-API cliente em Java para efetuar consultas nos web services da [Knewin](http://knewin.com "Knewin Inteligência em Recuperação Informação").
+API cliente em Java para efetuar consultas nas APIs [Knewin](http://knewin.com "Knewin Inteligência em Recuperação Informação").
   
   
   
