@@ -1,5 +1,6 @@
 package com.knewin.data.client.info;
 
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -19,6 +20,8 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 		ids = builder.ids;
 		showTimes = builder.showTimes;
 		matchedTerms = builder.matchedTerms;
+		defaultOperator = builder.defaultOperator;
+		headers = builder.headers;
 	}
 
 
@@ -29,7 +32,8 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 	@Override
 	public String toString() {
 		return "TvRequestInfo [key=" + key + ", query=" + query + ", offset=" + offset + ", filter=" + filter + ", gmt=" + gmt
-			+ ", sort=" + sort + ", ids=" + ids + ", showTimes=" + showTimes + ", matchedTerms=" + matchedTerms + "]";
+			+ ", sort=" + sort + ", ids=" + ids + ", showTimes=" + showTimes + ", matchedTerms=" + matchedTerms
+			+ ", defaultOperator=" + defaultOperator + ", headers=" + headers + "]";
 	}
 
 
@@ -57,6 +61,9 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 
 		private Boolean matchedTerms;
 
+		private String defaultOperator;
+
+		private Map<String, String> headers;
 
 		private Builder() {
 		}
@@ -112,6 +119,18 @@ public class TvRequestInfo extends MediaRequestInfo<TvRequestFilter> {
 
 		public Builder withMatchedTerms(final Boolean matchedTerms) {
 			this.matchedTerms = matchedTerms;
+			return this;
+		}
+
+
+		public Builder withDefaultOperator(final String defaultOperator) {
+			this.defaultOperator = defaultOperator;
+			return this;
+		}
+
+
+		public Builder withHeaders(final Map<String, String> headers) {
+			this.headers = headers;
 			return this;
 		}
 
