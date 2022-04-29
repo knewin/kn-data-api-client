@@ -32,6 +32,8 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 
 	protected Boolean matchedTerms;
 
+	protected String defaultOperator;
+
 	protected transient Map<String, String> headers = new HashMap<String, String>(1);
 
 	public String getKey() {
@@ -123,6 +125,16 @@ public abstract class MediaRequestInfo<F extends MediaRequestFilter> implements 
 
 	public void setMatchedTerms(final Boolean matchedTerms) {
 		this.matchedTerms = matchedTerms;
+	}
+
+
+	public String getDefaultOperator() {
+		return defaultOperator;
+	}
+
+
+	public void setDefaultOperator(final String defaultOperator) {
+		this.defaultOperator = defaultOperator;
 	}
 
 
