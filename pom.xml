@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.knewin</groupId>
-	<artifactId>kn-data-api-client</artifactId>
+	<artifactId>com.knewin.data.client</artifactId>
 	<packaging>jar</packaging>
-	<version>6.1.1</version>
+	<version>7.0.0</version>
 	<url>https://github.com/knewin/kn-data-api-client</url>
 
 	<properties>
