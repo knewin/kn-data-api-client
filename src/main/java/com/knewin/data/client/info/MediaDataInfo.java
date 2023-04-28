@@ -12,6 +12,8 @@ import com.knewin.data.client.info.media.Part;
  */
 public abstract class MediaDataInfo extends DataInfo {
 
+	private String key;
+
 	private String mediaUrl;
 
 	private String startTime;
@@ -29,6 +31,16 @@ public abstract class MediaDataInfo extends DataInfo {
 	private String content;
 
 	private List<Part> times;
+
+	public String getKey() {
+		return key;
+	}
+
+
+	public void setKey(final String key) {
+		this.key = key;
+	}
+
 
 	public String getMediaUrl() {
 		return mediaUrl;
@@ -117,14 +129,6 @@ public abstract class MediaDataInfo extends DataInfo {
 
 	public void setTimes(final List<Part> times) {
 		this.times = times;
-	}
-
-
-	@Override
-	public String toString() {
-		return "[mediaUrl=" + mediaUrl + ", startTime=" + startTime + ", endTime=" + endTime + ", duration=" + duration
-			+ ", editedTime=" + editedTime + ", origin=" + origin + ", title=" + title + ", content=" + content
-			+ ", times=" + times + "]";
 	}
 
 }
